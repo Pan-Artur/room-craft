@@ -20,7 +20,7 @@ const reviews = [
 ];
 
 export const Reviews = () => (
-  <Section>
+  <Section id="reviews">
     <Title>Що говорять наші користувачі</Title>
     <ReviewsGrid>
       {reviews.map(({ author, text }, i) => (

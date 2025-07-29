@@ -10,6 +10,10 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #4DB6AC;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

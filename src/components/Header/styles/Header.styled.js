@@ -17,9 +17,22 @@ export const HeaderFlex = styled.div`
   }
 `;
 
-export const Logo = styled.p`
-  font-size: 26px;
-  font-weight: 700;
+export const Logo = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+
+  & span {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+  }
 `;
 
 export const Nav = styled.nav`

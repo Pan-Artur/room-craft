@@ -38,7 +38,7 @@ const questions = [
 
 export const FAQ = () => {
   return (
-    <FAQSection>
+    <FAQSection id="faq">
       <Title>Поширені запитання</Title>
       <Accordion>
         {questions.map((q, i) => (
