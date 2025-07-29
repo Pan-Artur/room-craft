@@ -1,0 +1,98 @@
+{
+  "header": {
+    "page1": "Home",
+    "page2": "Build",
+    "page3": "Contacts",
+
+    "language": "Language"
+  },
+
+  "hero": {
+    "title": "Create the Room of Your Dreams",
+    "subtitle": "An intuitive planner for designing the perfect space. No limits, no stress — just creativity and idea realization.",
+
+    "item1": "Over 10,000 unique designs created",
+    "item2": "50+ interior elements",
+    "item3": "Tips from professional designers",
+
+    "text1": "User rating",
+    "text2": "Interior styles",
+
+    "button": "Start designing — it's free"
+  },
+
+  "features": {
+    "title1": "Unlimited Creativity",
+    "title2": "Accessibility",
+    "title3": "Project Saving",
+
+    "description1": "Combine thousands of interior elements: color, texture, size — design without limits.",
+    "description2": "Works on phones, tablets, and computers — right in your browser.",
+    "description3": "Your designs are saved to your account and available anytime."
+  },
+
+  "gallery": {
+    "title": "Inspiration for Your Design",
+
+    "text1": "Scandinavian",
+    "text2": "Loft",
+    "text3": "Minimalism"
+  },
+
+  "how-it-works": {
+    "title": "How It Works?",
+
+    "text1": "Choose room size",
+    "text2": "Add furniture",
+    "text3": "Adjust colors",
+    "text4": "Save and share"
+  },
+
+  "reviews": {
+    "title": "What Our Users Say",
+
+    "author1": "Anna, 19 years old",
+    "author2": "Maksym, designer",
+    "author3": "Oleh, 32 years old",
+    "author4": "Iryna, mother of two",
+    "author5": "Serhii, realtor",
+    "author6": "Yuliia, student",
+
+    "text1": "Created my dream room in 10 minutes!",
+    "text2": "I use it for quick client sketches.",
+    "text3": "Very intuitive, nothing extra.",
+    "text4": "It helped plan the kids' room before renovation.",
+    "text5": "Sometimes I show clients how a space might look.",
+    "text6": "Just awesome. Easy and no sign-up required."
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+
+    "question1": "What is this tool?",
+    "question2": "Do I need to install anything?",
+    "question3": "Can I share my design?",
+    "question4": "How much does it cost?",
+    "question5": "Does it work on mobile?",
+    "question6": "How can I contact support?",
+    "question7": "Can I save my design?",
+    "question8": "Is registration required?",
+
+    "answer1": "It's a web app that lets you easily create a room design by selecting furniture and colors.",
+    "answer2": "No, everything works right in your browser.",
+    "answer3": "Yes! You can export an image or share a link.",
+    "answer4": "The basic version is free. More features will be added soon.",
+    "answer5": "Yes, the interface is adapted for mobile devices.",
+    "answer6": "Message us in chat or email — links are at the bottom of the page.",
+    "answer7": "Yes, we automatically save your projects in local storage.",
+    "answer8": "No registration needed — just open and use it."
+  },
+
+  "footer": {
+    "anchor1": "How it works",
+    "anchor2": "Reviews",
+    "anchor3": "FAQ",
+
+    "authors": "Authors: Artur Pankovets, Maksym Ryaboshapka"
+  }
+}

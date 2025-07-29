@@ -1,6 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { Container } from "../../../components/Container/Container";
-import HeroImage from "../../../assets/images/HeroImage.webp";
+import HeroImage from "../../../assets/images/Hero/hero.webp";
 import {
   StyledHero,
   HeroGrid,
@@ -12,42 +12,41 @@ import {
   FeaturesList,
   FeatureItem,
   StatsWrapper,
-  StatItem
-} from './styles/Hero.styled';
+  StatItem,
+} from "./styles/Hero.styled";
+import { useTranslation } from "react-i18next";
 
 export const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <StyledHero>
       <Container>
         <HeroGrid>
           <ContentColumn>
-            <Title>Створи кімнату своєї мрії</Title>
-            <Subtitle>
-              Інтуїтивний конструктор для планування ідеального простору. 
-              Без обмежень, без стресу - тільки творчість та втілення ідей.
-            </Subtitle>
-            
+            <Title>{t("hero.title")}</Title>
+            <Subtitle>{t("hero.subtitle")}</Subtitle>
+
             <FeaturesList>
-              <FeatureItem>🏆 Понад 10,000 унікальних дизайнів створено</FeatureItem>
-              <FeatureItem>🎨 500+ елементів інтер'єру</FeatureItem>
-              <FeatureItem>💡 Підказки від професійних дизайнерів</FeatureItem>
+              <FeatureItem>🏆 {t("hero.item1")}</FeatureItem>
+              <FeatureItem>🎨 {t("hero.item2")}</FeatureItem>
+              <FeatureItem>💡 {t("hero.item3")}</FeatureItem>
             </FeaturesList>
 
             <StatsWrapper>
               <StatItem>
                 <span>4.9/5</span>
-                <p>Рейтинг користувачів</p>
+                <p>{t("hero.text1")}</p>
               </StatItem>
               <StatItem>
                 <span>50+</span>
-                <p>Стилів інтер'єру</p>
+                <p>{t("hero.text2")}</p>
               </StatItem>
             </StatsWrapper>
 
-            <CTAButton onClick={() => navigate('/build')}>
-              Почати дизайн — це безкоштовно
+            <CTAButton onClick={() => navigate("/build")}>
+              {t("hero.button")}
             </CTAButton>
           </ContentColumn>
 
