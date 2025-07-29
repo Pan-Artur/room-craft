@@ -21,11 +21,21 @@ export const ContentColumn = styled.div`
 `;
 
 export const ImageColumn = styled.div`
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+
   img {
     width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+    margin-top: 24px;
   }
 `;
 

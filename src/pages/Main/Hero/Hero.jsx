@@ -13,7 +13,7 @@ import {
   FeatureItem,
   StatsWrapper,
   StatItem
-} from './StyledHero';
+} from './styles/Hero.styled';
 
 export const Hero = () => {
   const navigate = useNavigate();
