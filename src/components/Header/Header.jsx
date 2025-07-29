@@ -43,7 +43,6 @@ export const Header = () => {
             <Nav>
               <Link to="/">{t("header.page1")}</Link>
               <Link to="/build">{t("header.page2")}</Link>
-              <Link to="/contacts">{t("header.page3")}</Link>
             </Nav>
   
             <BurgerBtn onClick={toggleOpen}>
@@ -61,9 +60,6 @@ export const Header = () => {
                 </Link>
                 <Link onClick={toggleOpen} to="/build">
                   {t("header.page2")}
-                </Link>
-                <Link onClick={toggleOpen} to="/contacts">
-                  {t("header.page3")}
                 </Link>
               </BurgerNav>
             </BurgerMenu>

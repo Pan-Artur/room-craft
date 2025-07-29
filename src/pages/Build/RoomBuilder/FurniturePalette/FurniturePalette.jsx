@@ -126,190 +126,227 @@ import {
   FaChair,
 } from "react-icons/fa";
 import { RiPlantFill, RiPlantLine } from "react-icons/ri";
-import {
-  GiWoodenChair,
-  GiSofa,
-  GiBed,
-  GiSteeringWheel,
-} from "react-icons/gi";
+import { GiWoodenChair, GiSofa, GiBed, GiSteeringWheel } from "react-icons/gi";
 import { PiRug } from "react-icons/pi";
 import { SiApplearcade } from "react-icons/si";
+
+import { useTranslation } from "react-i18next";
 
 export const FurniturePalette = ({ onSelectItem }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const { t } = useTranslation();
 
   const categories = {
     furniture: {
-      name: "Меблі",
+      name: t("furniture.furnitureName"),
       icon: <LuSofa size={20} />,
       items: [
         {
           id: "bed",
-          name: "Ліжка",
+          name: t("furniture.beds.name"),
           icon: <GiBed size={20} />,
           components: [
-            { name: "Ліжко-палац", component: <CanopyBed /> },
-            { name: "Розкладне ліжко", component: <FoldingBed /> },
-            { name: "Ліжко-гамак", component: <HammockBed /> },
-            { name: "Металеве ліжко", component: <MetalBed /> },
-            { name: "Ліжко з шухлядами", component: <StorageBed /> },
-            { name: "Ліжко-трансформер", component: <TransformerBed /> },
+            { name: t("furniture.beds.bed1"), component: <CanopyBed /> },
+            { name: t("furniture.beds.bed2"), component: <FoldingBed /> },
+            { name: t("furniture.beds.bed3"), component: <HammockBed /> },
+            { name: t("furniture.beds.bed4"), component: <MetalBed /> },
+            { name: t("furniture.beds.bed5"), component: <StorageBed /> },
+            { name: t("furniture.beds.bed6"), component: <TransformerBed /> },
           ],
         },
         {
           id: "sofa",
-          name: "Дивани",
+          name: t("furniture.sofas.name"),
           icon: <GiSofa size={20} />,
           components: [
-            { name: "Класичний диван", component: <ClassicSofa /> },
-            { name: "Сучасний диван", component: <ModernSofa /> },
-            { name: "Кутовий диван", component: <CornerSofa /> },
-            { name: "Диван-ліжко", component: <SofaBed /> },
-            { name: "Розкладний диван", component: <FoldingSofa /> },
+            { name: t("furniture.sofas.sofa1"), component: <ClassicSofa /> },
+            { name: t("furniture.sofas.sofa2"), component: <ModernSofa /> },
+            { name: t("furniture.sofas.sofa3"), component: <CornerSofa /> },
+            { name: t("furniture.sofas.sofa4"), component: <SofaBed /> },
+            { name: t("furniture.sofas.sofa5"), component: <FoldingSofa /> },
           ],
         },
         {
           id: "chair",
-          name: "Крісла",
+          name: t("furniture.chairs.name"),
           icon: <GiWoodenChair size={20} />,
           components: [
-            { name: "Дерев'яне крісло", component: <ClassicWoodChair /> },
-            { name: "Крісло-кокон", component: <CocoonChair /> },
-            { name: "Геймерське крісло", component: <GamingChair /> },
-            { name: "Садове крісло", component: <GardenChair /> },
-            { name: "Крісло-підвіс", component: <HangingChair /> },
-            { name: "Крісло-сітка", component: <MeshChair /> },
-            { name: "Сучасне крісло", component: <ModernChair /> },
-            { name: "Офісне крісло", component: <OfficeChair /> },
-            { name: "Крісло-качалка", component: <RockingChair /> },
-            { name: "Просте крісло", component: <SimpleChair /> },
+            {
+              name: t("furniture.chairs.chair1"),
+              component: <ClassicWoodChair />,
+            },
+            { name: t("furniture.chairs.chair2"), component: <CocoonChair /> },
+            { name: t("furniture.chairs.chair3"), component: <GamingChair /> },
+            { name: t("furniture.chairs.chair4"), component: <GardenChair /> },
+            { name: t("furniture.chairs.chair5"), component: <HangingChair /> },
+            { name: t("furniture.chairs.chair6"), component: <MeshChair /> },
+            { name: t("furniture.chairs.chair7"), component: <ModernChair /> },
+            { name: t("furniture.chairs.chair8"), component: <OfficeChair /> },
+            { name: t("furniture.chairs.chair9"), component: <RockingChair /> },
+            { name: t("furniture.chairs.chair10"), component: <SimpleChair /> },
           ],
         },
         {
           id: "desk",
-          name: "Столи",
+          name: t("furniture.desks.name"),
           icon: <LuTable2 size={20} />,
           components: [
-            { name: "Дерев'яний стіл", component: <ClassicTable /> },
-            { name: "Cкляний стіл", component: <ModernTable /> },
-            { name: "Офісний стіл", component: <OfficeTable /> },
-            { name: "Кавовий столик", component: <CoffeeTable /> },
-            { name: "Складний стіл", component: <FoldingTable /> },
+            { name: t("furniture.desks.desk1"), component: <ClassicTable /> },
+            { name: t("furniture.desks.desk2"), component: <ModernTable /> },
+            { name: t("furniture.desks.desk3"), component: <OfficeTable /> },
+            { name: t("furniture.desks.desk4"), component: <CoffeeTable /> },
+            { name: t("furniture.desks.desk5"), component: <FoldingTable /> },
           ],
         },
         {
           id: "wardrobe",
-          name: "Шафи",
+          name: t("furniture.wardrobe.name"),
           icon: <LuDoorOpen size={20} />,
           components: [
-            { name: "Класична шафа", component: <ClassicWardrobe /> },
-            { name: "Сучасна шафа", component: <ModernWardrobe /> },
-            { name: "Книжкова шафа", component: <Bookcase /> },
-            { name: "Шафа з полицями", component: <ShelfWardrobe /> },
-            { name: "Шафа-гардероб", component: <ClosetWardrobe /> },
+            {
+              name: t("furniture.wardrobe.wardrobe1"),
+              component: <ClassicWardrobe />,
+            },
+            {
+              name: t("furniture.wardrobe.wardrobe2"),
+              component: <ModernWardrobe />,
+            },
+            {
+              name: t("furniture.wardrobe.wardrobe3"),
+              component: <Bookcase />,
+            },
+            {
+              name: t("furniture.wardrobe.wardrobe4"),
+              component: <ShelfWardrobe />,
+            },
+            {
+              name: t("furniture.wardrobe.wardrobe5"),
+              component: <ClosetWardrobe />,
+            },
           ],
         },
         {
           id: "shelf",
-          name: "Полиці",
+          name: t("furniture.shelfs.name"),
           icon: <LuLibrary size={20} />,
           components: [
-            { name: "Класична полиця", component: <ClassicShelf /> },
-            { name: "Сучасна полиця", component: <ModernShelf /> },
-            { name: "Кутова полиця", component: <CornerShelf /> },
+            { name: t("furniture.shelfs.shelf1"), component: <ClassicShelf /> },
+            { name: t("furniture.shelfs.shelf2"), component: <ModernShelf /> },
+            { name: t("furniture.shelfs.shelf3"), component: <CornerShelf /> },
           ],
         },
       ],
     },
     electronics: {
-      name: "Техніка",
+      name: t("furniture.electronicsName"),
       icon: <FaTv size={20} />,
       items: [
         {
           id: "pc",
-          name: "Комп'ютери",
+          name: t("furniture.pcs.name"),
           icon: <FaDesktop size={20} />,
           components: [
-            { name: "Настільний ПК", component: <DesktopPC /> },
-            { name: "Ноутбук", component: <Laptop /> },
-            { name: "Геймерський ПК", component: <GamingPC /> },
+            { name: t("furniture.pcs.pc1"), component: <DesktopPC /> },
+            { name: t("furniture.pcs.pc2"), component: <Laptop /> },
+            { name: t("furniture.pcs.pc3"), component: <GamingPC /> },
           ],
         },
         {
           id: "tv",
-          name: "Телевізори",
+          name: t("furniture.tvs.name"),
           icon: <FaTv size={20} />,
-          components: [{ name: "Телевізор", component: <FlatTV /> }],
+          components: [{ name: t("furniture.tvs.tv"), component: <FlatTV /> }],
         },
         {
           id: "lamp",
-          name: "Лампи",
+          name: t("furniture.lamps.name"),
           icon: <LuLamp size={20} />,
           components: [
-            { name: "Настільна лампа", component: <DeskLamp /> },
-            { name: "Сучасна LED лампа", component: <ModernLamp /> },
-            { name: "Підлогова лампа", component: <FloorLamp /> },
+            { name: t("furniture.lamps.lamp1"), component: <DeskLamp /> },
+            { name: t("furniture.lamps.lamp2"), component: <ModernLamp /> },
+            { name: t("furniture.lamps.lamp3"), component: <FloorLamp /> },
           ],
         },
       ],
     },
     decor: {
-      name: "Декор",
+      name: t("furniture.decorName"),
       icon: <RiPlantFill size={20} />,
       items: [
         {
           id: "plant",
-          name: "Рослини",
+          name: t("furniture.plants.name"),
           icon: <RiPlantLine size={20} />,
           components: [
-            { name: "Кактус", component: <CactusPlant /> },
-            { name: "Листяна рослина", component: <LeafyPlant /> },
-            { name: "Квітуча рослина", component: <FloweringPlant /> },
+            { name: t("furniture.plants.plant1"), component: <CactusPlant /> },
+            { name: t("furniture.plants.plant2"), component: <LeafyPlant /> },
+            {
+              name: t("furniture.plants.plant3"),
+              component: <FloweringPlant />,
+            },
           ],
         },
         {
           id: "rug",
-          name: "Килими",
+          name: t("furniture.rugs.name"),
           icon: <PiRug size={20} />,
           components: [
-            { name: "Орієнтальний килим", component: <OrientalRug /> },
-            { name: "Сучасний килим", component: <ModernRug /> },
+            { name: t("furniture.rugs.rug1"), component: <OrientalRug /> },
+            { name: t("furniture.rugs.rug2"), component: <ModernRug /> },
           ],
         },
       ],
     },
     gaming: {
-      name: "Геймінг",
+      name: t("furniture.gamingName"),
       icon: <FaGamepad size={20} />,
       items: [
         {
           id: "beanbag",
-          name: "Пуфи",
+          name: t("furniture.beanbags.name"),
           icon: <FaChair size={20} />,
           components: [
-            { name: "Класичний круглий", component: <RoundPouf /> },
-            { name: "Сучасний квадратний", component: <SquarePouf /> },
-            { name: "Дизайнерський зірочка", component: <StarPouf /> },
+            {
+              name: t("furniture.beanbags.beanbag1"),
+              component: <RoundPouf />,
+            },
+            {
+              name: t("furniture.beanbags.beanbag2"),
+              component: <SquarePouf />,
+            },
+            { name: t("furniture.beanbags.beanbag3"), component: <StarPouf /> },
           ],
         },
         {
           id: "wheel",
-          name: "Кермо",
+          name: t("furniture.wheels.name"),
           icon: <GiSteeringWheel size={20} />,
           components: [
-            { name: "Спортивне кермо", component: <SportSteeringWheel /> },
-            { name: "Гоночне кермо", component: <RacingSteeringWheel /> },
+            {
+              name: t("furniture.wheels.wheel1"),
+              component: <SportSteeringWheel />,
+            },
+            {
+              name: t("furniture.wheels.wheel2"),
+              component: <RacingSteeringWheel />,
+            },
           ],
         },
         {
           id: "arcade",
-          name: "Аркади",
+          name: t("furniture.arcades.name"),
           icon: <SiApplearcade size={20} />,
           components: [
-            { name: "Класичний автомат", component: <ClassicArcade /> },
-            { name: "Гоночний автомат", component: <RacingArcade /> },
+            {
+              name: t("furniture.arcades.arcade1"),
+              component: <ClassicArcade />,
+            },
+            {
+              name: t("furniture.arcades.arcade2"),
+              component: <RacingArcade />,
+            },
           ],
         },
       ],
@@ -322,87 +359,94 @@ export const FurniturePalette = ({ onSelectItem }) => {
   };
 
   const toggleSubcategory = (subcategoryId) => {
-    setActiveSubcategory(activeSubcategory === subcategoryId ? null : subcategoryId);
+    setActiveSubcategory(
+      activeSubcategory === subcategoryId ? null : subcategoryId
+    );
   };
 
   const filteredCategories = Object.values(categories)
     .map((category) => {
-      const filteredItems = category.items.filter((item) => 
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.components.some(comp => 
-          comp.name.toLowerCase().includes(searchQuery.toLowerCase())
-        )
+      const filteredItems = category.items.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.components.some((comp) =>
+            comp.name.toLowerCase().includes(searchQuery.toLowerCase())
+          )
       );
       return { ...category, items: filteredItems };
     })
     .filter((category) => category.items.length > 0);
 
   return (
-    <PaletteContainer>
-      <PaletteHeader>Каталог меблів</PaletteHeader>
+    <Container>
+      <PaletteContainer>
+        <PaletteHeader>{t("catalog.title")}</PaletteHeader>
 
-      <SearchInput
-        placeholder="Пошук меблів..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+        <SearchInput
+          placeholder={t("catalog.placeholder")}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
 
-      <CategoryList>
-        {filteredCategories.map((category) => (
-          <CategoryItem key={category.name}>
-            <CategoryHeader
-              onClick={() => toggleCategory(category.name)}
-              $isActive={activeCategory === category.name}
-            >
-              <CategoryIcon>{category.icon}</CategoryIcon>
-              <CategoryName>{category.name}</CategoryName>
-              <CategoryArrow>
-                {activeCategory === category.name ? (
-                  <FaChevronUp />
-                ) : (
-                  <FaChevronDown />
-                )}
-              </CategoryArrow>
-            </CategoryHeader>
+        <CategoryList>
+          {filteredCategories.map((category) => (
+            <CategoryItem key={category.name}>
+              <CategoryHeader
+                onClick={() => toggleCategory(category.name)}
+                $isActive={activeCategory === category.name}
+              >
+                <CategoryIcon>{category.icon}</CategoryIcon>
+                <CategoryName>{category.name}</CategoryName>
+                <CategoryArrow>
+                  {activeCategory === category.name ? (
+                    <FaChevronUp />
+                  ) : (
+                    <FaChevronDown />
+                  )}
+                </CategoryArrow>
+              </CategoryHeader>
 
-            <CategoryContent $isOpen={activeCategory === category.name}>
-              {category.items.map((item) => (
-                <div key={item.id}>
-                  <SubcategoryHeader
-                    onClick={() => toggleSubcategory(item.id)}
-                    $isActive={activeSubcategory === item.id}
-                  >
-                    <FurnitureIcon>{item.icon}</FurnitureIcon>
-                    <SubcategoryName>{item.name}</SubcategoryName>
-                    <CategoryArrow>
-                      {activeSubcategory === item.id ? (
-                        <FaChevronUp size={14} />
-                      ) : (
-                        <FaChevronDown size={14} />
-                      )}
-                    </CategoryArrow>
-                  </SubcategoryHeader>
+              <CategoryContent $isOpen={activeCategory === category.name}>
+                {category.items.map((item) => (
+                  <div key={item.id}>
+                    <SubcategoryHeader
+                      onClick={() => toggleSubcategory(item.id)}
+                      $isActive={activeSubcategory === item.id}
+                    >
+                      <FurnitureIcon>{item.icon}</FurnitureIcon>
+                      <SubcategoryName>{item.name}</SubcategoryName>
+                      <CategoryArrow>
+                        {activeSubcategory === item.id ? (
+                          <FaChevronUp size={14} />
+                        ) : (
+                          <FaChevronDown size={14} />
+                        )}
+                      </CategoryArrow>
+                    </SubcategoryHeader>
 
-                  <SubcategoryContent $isOpen={activeSubcategory === item.id}>
-                    {item.components.map((component, index) => (
-                      <FurnitureItem
-                        key={`${item.id}-${index}`}
-                        onClick={() => onSelectItem({
-                          ...item,
-                          component: component.component,
-                          name: component.name
-                        })}
-                      >
-                        <FurnitureName>{component.name}</FurnitureName>
-                      </FurnitureItem>
-                    ))}
-                  </SubcategoryContent>
-                </div>
-              ))}
-            </CategoryContent>
-          </CategoryItem>
-        ))}
-      </CategoryList>
-    </PaletteContainer>
+                    <SubcategoryContent $isOpen={activeSubcategory === item.id}>
+                      {item.components.map((component, index) => (
+                        <FurnitureItem
+                          key={`${item.id}-${index}`}
+                          onClick={() =>
+                            onSelectItem({
+                              ...item,
+                              component: component.component,
+                              name: component.name,
+                            })
+                          }
+                        >
+                          <FurnitureName>{component.name}</FurnitureName>
+                        </FurnitureItem>
+                      ))}
+                    </SubcategoryContent>
+                  </div>
+                ))}
+              </CategoryContent>
+            </CategoryItem>
+          ))}
+        </CategoryList>
+      </PaletteContainer>
+    </Container>
   );
 };

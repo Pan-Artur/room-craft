@@ -42,15 +42,15 @@
 ```bash
 git clone https://github.com/Pan-Artur/room-craft.git
 cd room-craft
-npm install
+npm install --legacy-peer-deps
 npm start
 ```
 
-### 🔗 [Демо-посилання](https://yourusername.github.io/roomcraft)
+<!-- ### 🔗 [Демо-посилання](https://yourusername.github.io/roomcraft)
 
 ## 🖼️ Демо-відео
 
-> (тут вставити посилання на відео або gif-демо)
+> (тут вставити посилання на відео або gif-демо) -->
 
 ## 🧐 Що далі?
 
