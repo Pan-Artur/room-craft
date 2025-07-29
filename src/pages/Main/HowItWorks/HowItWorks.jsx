@@ -15,7 +15,7 @@ const steps = [
 ];
 
 export const HowItWorks = () => (
-  <Section>
+  <Section id="how-it-works">
     <Title>Як це працює?</Title>
     <StepsWrapper>
       {steps.map(({ number, title }) => (

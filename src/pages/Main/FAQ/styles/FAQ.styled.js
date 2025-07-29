@@ -11,6 +11,16 @@ export const Title = styled.h2`
   margin-bottom: 40px;
   color: #2f2f2f;
   font-weight: 700;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #4db6ac;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
 `;
 
 export const Accordion = styled.div`
