@@ -4,6 +4,11 @@ export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  *::selection {
+    color: #fff;
+    background-color: #4DB6AC;
+  }
   
   body {
     margin: 0;
