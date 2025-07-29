@@ -2,6 +2,7 @@ import { Hero } from "./Hero/Hero";
 import { Features } from "./Features/Features";
 import { Gallery } from "./Gallery/Gallery";
 import { HowItWorks } from "./HowItWorks/HowItWorks";
+import { Reviews } from "./Reviews/Reviews";
 
 export const Main = () => {
   return (
@@ -10,6 +11,7 @@ export const Main = () => {
       <Features />
       <Gallery />
       <HowItWorks />
+      <Reviews />
     </main>
   );
 };
