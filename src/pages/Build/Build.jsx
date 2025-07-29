@@ -1,11 +1,9 @@
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/Footer/Footer";
+
 
 export const Build = () => {
   return ( 
-    <>
-      <Header />
-      <Footer />
-    </>
+    <main>
+      
+    </main>
   );
 };
