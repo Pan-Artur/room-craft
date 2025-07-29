@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Container } from "../../../components/Container/Container";
-import HeroImage from "../../../assets/images/HeroImage.webp";
+import HeroImage from "../../../assets/images/Hero/hero.webp";
 import {
   StyledHero,
   HeroGrid,

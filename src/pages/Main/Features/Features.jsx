@@ -1,5 +1,5 @@
 import { GiSofa, GiSmartphone, GiSave } from "react-icons/gi";
-import { Container } from "../../../../components/Container/Container";
+import { Container } from "../../../components/Container/Container";
 import {
   Section,
   FeaturesWrapper,
