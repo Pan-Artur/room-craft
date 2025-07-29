@@ -1,9 +1,11 @@
-
+import { FurniturePalette } from "./FurniturePalette/FurniturePalette";
+// import { RoomGrid } from "./RoomGrid/RoomGrid";
 
 export const Build = () => {
-  return ( 
+  return (
     <main>
-      
+      <FurniturePalette />
+      {/* <RoomGrid /> */}
     </main>
   );
 };
