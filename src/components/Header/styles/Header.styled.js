@@ -30,13 +30,17 @@ export const Nav = styled.nav`
     gap: 35px;
   }
 
-  /* @media screen and (min-width: 1320px) {
-    display: flex;
-  } */
-
   & * {
     color: #000;
     font-size: 18px;
+    font-weight: 500;
+
+    transition: color 250ms ease;
+
+    &:hover,
+    &:focus {
+      color: #4db6ac;
+    }
   }
 `;
 
@@ -83,6 +87,14 @@ export const BurgerNav = styled.nav`
   & * {
     color: #000;
     font-size: 22px;
+    font-weight: 500;
+
+    transition: color 250ms ease;
+
+    &:hover,
+    &:focus {
+      color: #4db6ac;
+    }
   }
 `;
 
