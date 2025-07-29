@@ -10,33 +10,37 @@ export const FoldingBed = () => {
 };
 
 const BedContainer = styled.div`
-  width: 150px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const MainPart = styled.div`
-  width: 130px;
-  height: 180px;
+  width: 80%;
+  height: 70%;
   background-color: #A1887F;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 5%;
+  left: 10%;
+  border-radius: 5% 5% 0 0;
 `;
 
 const FoldingPart = styled.div`
-  width: 130px;
-  height: 30px;
+  width: 80%;
+  height: 20%;
   background-color: #8D6E63;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 5%;
+  left: 10%;
+  border-radius: 5%;
+
   &::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 5px;
+    height: 15%;
     background-color: #5D4037;
     bottom: 0;
+    border-radius: 0 0 5% 5%;
   }
-`;
+`

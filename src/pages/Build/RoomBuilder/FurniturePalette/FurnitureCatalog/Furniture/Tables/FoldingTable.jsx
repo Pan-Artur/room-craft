@@ -11,34 +11,34 @@ export const FoldingTable = () => {
 };
 
 const FoldingTableContainer = styled.div`
-  width: 180px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const MainPanel = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 55%;
+  height: 80%;
   background-color: #6D4C41;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 5%;
 `;
 
 const ExtensionPanel = styled.div`
-  width: 60px;
-  height: 80px;
+  width: 35%;
+  height: 65%;
   background-color: #5D4037;
   position: absolute;
-  top: 20px;
-  right: 10px;
+  top: 17%;
+  right: 5%;
 `;
 
 const SupportLeg = styled.div`
-  width: 5px;
-  height: 80px;
+  width: 3%;
+  height: 65%;
   background-color: #4E342E;
   position: absolute;
-  top: 20px;
-  right: 70px;
+  top: 17%;
+  right: 40%;
 `;

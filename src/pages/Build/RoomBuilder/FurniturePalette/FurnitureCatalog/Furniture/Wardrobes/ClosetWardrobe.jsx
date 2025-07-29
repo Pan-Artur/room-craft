@@ -15,48 +15,48 @@ export const ClosetWardrobe = () => {
 };
 
 const ClosetContainer = styled.div`
-  width: 150px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ClosetBody = styled.div`
-  width: 140px;
-  height: 170px;
+  width: 90%;
+  height: 95%;
   background-color: #F5DEB3;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 2.5%;
+  left: 5%;
 `;
 
 const ClosetRail = styled.div`
-  width: 120px;
-  height: 3px;
+  width: 85%;
+  height: 1.5%;
   background-color: #A0522D;
   position: absolute;
-  top: 30px;
-  left: 10px;
+  top: 15%;
+  left: 7.5%;
 `;
 
 const ClosetHanger = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 13%;
+  height: 13%;
   border-radius: 50% 50% 0 0;
-  border: 2px solid #696969;
+  border: 1.5% solid #696969;
   position: absolute;
-  top: 35px;
+  top: 17%;
   
-  &:nth-child(2) { left: 30px; }
-  &:nth-child(3) { left: 70px; }
-  &:nth-child(4) { left: 110px; }
+  &:nth-child(2) { left: 20%; }
+  &:nth-child(3) { left: 50%; }
+  &:nth-child(4) { left: 80%; }
 `;
 
 const ClosetDoor = styled.div`
-  width: 60px;
-  height: 160px;
+  width: 40%;
+  height: 90%;
   background-color: rgba(245, 222, 179, 0.7);
-  border: 2px solid #A0522D;
+  border: 1.5% solid #A0522D;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 5%;
+  right: 5%;
 `;

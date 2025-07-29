@@ -10,14 +10,14 @@ export const StarPouf = () => {
 };
 
 const StarPoufContainer = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const StarShape = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 80%;
+  height: 80%;
   background-color: #FF6B6B;
   clip-path: polygon(
     50% 0%, 
@@ -32,13 +32,13 @@ const StarShape = styled.div`
     39% 35%
   );
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 10%;
 `;
 
 const StarCenter = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 25%;
+  height: 25%;
   background-color: #FFE66D;
   border-radius: 50%;
   position: absolute;

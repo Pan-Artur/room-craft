@@ -13,57 +13,57 @@ export const Laptop = () => {
 };
 
 const LaptopContainer = styled.div`
-  width: 150px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const LaptopBase = styled.div`
-  width: 130px;
-  height: 80px;
+  width: 85%;
+  height: 65%;
   background-color: #E0E0E0;
-  border-radius: 5px 5px 0 0;
+  border-radius: 3% 3% 0 0;
   position: absolute;
   bottom: 0;
-  left: 10px;
+  left: 7.5%;
 `;
 
 const KeyboardArea = styled.div`
-  width: 120px;
-  height: 50px;
+  width: 90%;
+  height: 60%;
   background-color: #333;
-  border-radius: 3px;
+  border-radius: 2%;
   position: absolute;
-  top: 10px;
-  left: 5px;
+  top: 10%;
+  left: 5%;
 `;
 
 const Touchpad = styled.div`
-  width: 40px;
-  height: 20px;
+  width: 30%;
+  height: 15%;
   background-color: #555;
-  border-radius: 2px;
+  border-radius: 1.5%;
   position: absolute;
-  bottom: 5px;
-  left: 45px;
+  bottom: 5%;
+  left: 35%;
 `;
 
 const LaptopScreen = styled.div`
-  width: 130px;
-  height: 90px;
+  width: 85%;
+  height: 75%;
   background-color: #0066CC;
-  border: 3px solid #E0E0E0;
+  border: 2% solid #E0E0E0;
   border-bottom: none;
-  border-radius: 5px 5px 0 0;
+  border-radius: 3% 3% 0 0;
   position: absolute;
   top: 0;
-  left: 10px;
+  left: 7.5%;
   &::after {
     content: '';
     color: white;
-    font-size: 10px;
+    font-size: 50%;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 5%;
+    right: 5%;
   }
 `;

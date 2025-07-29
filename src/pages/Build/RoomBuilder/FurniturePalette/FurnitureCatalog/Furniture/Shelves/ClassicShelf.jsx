@@ -4,34 +4,33 @@ export const ClassicShelf = () => {
   return (
     <ClassicShelfContainer>
       <ShelfBoard />
-      <ShelfSupport left />
-      <ShelfSupport right />
+      <ShelfSupport $left />
+      <ShelfSupport $right />
     </ClassicShelfContainer>
   );
 };
 
 const ClassicShelfContainer = styled.div`
-  width: 150px;
-  height: 30px;
+  width: 100%;
+  height: 20%;
   position: relative;
 `;
 
 const ShelfBoard = styled.div`
-  width: 140px;
-  height: 20px;
+  width: 90%;
+  height: 70%;
   background-color: #8B4513;
-  border: 2px solid #654321;
+  border: 2% solid #654321;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 15%;
+  left: 5%;
 `;
 
 const ShelfSupport = styled.div`
-  width: 10px;
-  height: 30px;
+  width: 7%;
+  height: 100%;
   background-color: #654321;
   position: absolute;
   top: 0;
-  left: ${props => props.left ? '0' : 'auto'};
-  right: ${props => props.right ? '0' : 'auto'};
+  ${props => props.$left ? 'left: 0;' : 'right: 0;'}
 `;

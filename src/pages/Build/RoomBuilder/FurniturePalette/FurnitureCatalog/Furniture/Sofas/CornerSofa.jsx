@@ -10,27 +10,27 @@ export const CornerSofa = () => {
 };
 
 const CornerSofaContainer = styled.div`
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const CornerBase = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 65%;
+  height: 65%;
   background-color: #5d4037;
-  border-radius: 10px;
+  border-radius: 8%;
   position: absolute;
-  top: 60px;
-  left: 60px;
+  top: 35%;
+  left: 35%;
 `;
 
 const CornerExtension = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 35%;
+  height: 35%;
   background-color: #4e342e;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 8% 8% 0;
   position: absolute;
-  top: 120px;
+  top: 65%;
   left: 0;
 `;

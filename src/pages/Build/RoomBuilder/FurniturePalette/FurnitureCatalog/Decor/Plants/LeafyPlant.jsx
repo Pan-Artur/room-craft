@@ -4,36 +4,38 @@ export const LeafyPlant = () => {
   return (
     <PlantContainer>
       <Pot />
-      <Leaf big />
-      <Leaf medium rotate="30deg" />
-      <Leaf small rotate="-20deg" />
+      <Leaf $big />
+      <Leaf $medium $rotate="30deg" />
+      <Leaf $small $rotate="-20deg" />
     </PlantContainer>
   );
 };
 
 const PlantContainer = styled.div`
-  width: 120px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 const Pot = styled.div`
-  width: 70px;
-  height: 50px;
+  width: 60%;
+  height: 30%;
   background-color: #D2B48C;
-  border-radius: 0 0 15px 15px;
-  position: absolute;
-  bottom: 0;
-  left: 25px;
+  border-radius: 0 0 15% 15%;
+  position: relative;
 `;
 
 const Leaf = styled.div`
-  width: ${props => props.big ? '60px' : props.medium ? '40px' : '30px'};
-  height: ${props => props.big ? '40px' : props.medium ? '30px' : '20px'};
+  width: ${props => props.$big ? '50%' : props.$medium ? '35%' : '25%'};
+  height: ${props => props.$big ? '30%' : props.$medium ? '20%' : '15%'};
   background-color: #3CB371;
   border-radius: 50% 0 50% 50%;
   position: absolute;
-  bottom: ${props => props.big ? '50px' : props.medium ? '70px' : '60px'};
-  left: ${props => props.big ? '30px' : props.medium ? '50px' : '20px'};
-  transform: rotate(${props => props.rotate || '0'});
+  bottom: ${props => props.$big ? '30%' : props.$medium ? '45%' : '40%'};
+  left: ${props => props.$big ? '25%' : props.$medium ? '40%' : '15%'};
+  transform: rotate(${props => props.$rotate || '0'});
 `;

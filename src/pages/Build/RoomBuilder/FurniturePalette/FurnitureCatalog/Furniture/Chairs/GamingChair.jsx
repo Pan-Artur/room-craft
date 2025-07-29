@@ -11,45 +11,45 @@ export const GamingChair = () => {
 };
 
 const GamingChairContainer = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const GamingSeat = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 70%;
+  height: 70%;
   background-color: #1a1a1a;
-  border-radius: 5px;
+  border-radius: 10%;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 15%;
+  left: 15%;
 `;
 
 const GamingBack = styled.div`
-  width: 80px;
-  height: 30px;
+  width: 70%;
+  height: 25%;
   background-color: #ff4500; 
-  border-radius: 5px 5px 0 0;
+  border-radius: 10% 10% 0 0;
   position: absolute;
   top: 0;
-  left: 20px;
+  left: 15%;
 `;
 
 const GamingWings = styled.div`
-  width: 20px;
-  height: 60px;
+  width: 15%;
+  height: 50%;
   background-color: #1a1a1a;
   position: absolute;
-  top: 30px;
+  top: 25%;
   left: 0;
 
   &::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 60px;
+    width: 15%;
+    height: 50%;
     background-color: #1a1a1a;
-    right: -100px;
+    right: -85%;
   }
 `;

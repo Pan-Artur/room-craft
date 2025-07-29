@@ -14,29 +14,29 @@ export const Bookcase = () => {
 };
 
 const BookcaseContainer = styled.div`
-  width: 120px;
-  height: 220px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const BookcaseBody = styled.div`
-  width: 110px;
-  height: 210px;
+  width: 90%;
+  height: 95%;
   background-color: #DEB887;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 2.5%;
+  left: 5%;
 `;
 
 const BookcaseShelf = styled.div`
-  width: 100px;
-  height: 3px;
+  width: 85%;
+  height: 1.5%;
   background-color: #8B4513;
   position: absolute;
-  left: 5px;
+  left: 5%;
   
-  &:nth-child(1) { top: 30px; }
-  &:nth-child(2) { top: 70px; }
-  &:nth-child(3) { top: 110px; }
-  &:nth-child(4) { top: 150px; }
+  &:nth-child(1) { top: 15%; }
+  &:nth-child(2) { top: 35%; }
+  &:nth-child(3) { top: 55%; }
+  &:nth-child(4) { top: 75%; }
 `;

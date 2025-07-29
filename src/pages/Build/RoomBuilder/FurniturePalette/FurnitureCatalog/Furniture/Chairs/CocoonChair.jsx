@@ -10,27 +10,27 @@ export const CocoonChair = () => {
 };
 
 const ChairContainer = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ChairShell = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 80%;
+  height: 80%;
   background-color: #6D4C41;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 10%;
 `;
 
 const ChairOpening = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 50%;
+  height: 50%;
   background-color: #8D6E63;
   border-radius: 50%;
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 25%;
+  left: 25%;
 `;

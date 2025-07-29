@@ -14,43 +14,38 @@ export const ShelfWardrobe = () => {
 };
 
 const ShelfWardrobeContainer = styled.div`
-  width: 140px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ShelfBody = styled.div`
-  width: 130px;
-  height: 190px;
+  width: 90%;
+  height: 95%;
   background-color: #D2B48C;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 2.5%;
+  left: 5%;
 `;
 
 const Shelf = styled.div`
-  width: 120px;
-  height: 3px;
+  width: 85%;
+  height: 1.5%;
   background-color: #A0522D;
   position: absolute;
-  left: 5px;
-  top: ${props => props.top || '40px'};
+  left: 5%;
   
-  &:nth-child(2) {
-    top: 80px;
-  }
-  
-  &:nth-child(3) {
-    top: 120px;
-  }
+  &:nth-child(1) { top: 20%; }
+  &:nth-child(2) { top: 45%; }
+  &:nth-child(3) { top: 70%; }
 `;
 
 const ShelfDoor = styled.div`
-  width: 60px;
-  height: 180px;
+  width: 40%;
+  height: 90%;
   background-color: rgba(210, 180, 140, 0.7);
-  border: 2px solid #A0522D;
+  border: 1.5% solid #A0522D;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 5%;
+  right: 5%;
 `;

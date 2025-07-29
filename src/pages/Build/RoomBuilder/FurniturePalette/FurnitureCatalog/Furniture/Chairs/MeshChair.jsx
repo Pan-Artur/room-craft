@@ -5,26 +5,26 @@ export const MeshChair = () => {
     <ChairContainer>
       <ChairFrame>
         <ChairCross />
-        <ChairCross rotate />
+        <ChairCross $rotate />
       </ChairFrame>
     </ChairContainer>
   );
 };
 
 const ChairContainer = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ChairFrame = styled.div`
-  width: 80px;
-  height: 80px;
-  border: 5px solid #424242;
-  border-radius: 5px;
+  width: 80%;
+  height: 80%;
+  border: 5% solid #424242;
+  border-radius: 5%;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 10%;
 `;
 
 const ChairCross = styled.div`
@@ -35,9 +35,9 @@ const ChairCross = styled.div`
     content: '';
     position: absolute;
     width: 100%;
-    height: 5px;
+    height: 5%;
     background-color: #424242;
     top: 50%;
-    transform: translateY(-50%) ${props => props.rotate && 'rotate(90deg)'};
+    transform: translateY(-50%) ${props => props.$rotate && 'rotate(90deg)'};
   }
 `;

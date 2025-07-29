@@ -11,36 +11,37 @@ export const FoldingSofa = () => {
 };
 
 const FoldingSofaContainer = styled.div`
-  width: 200px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const FoldingBase = styled.div`
-  width: 180px;
-  height: 70px;
+  width: 90%;
+  height: 70%;
   background-color: #3e2723;
-  border-radius: 5px;
+  border-radius: 4%;
   position: absolute;
-  top: 30px;
-  left: 10px;
+  top: 30%;
+  left: 5%;
 `;
 
 const FoldingBack = styled.div`
-  width: 180px;
-  height: 20px;
+  width: 90%;
+  height: 15%;
   background-color: #4e342e;
-  border-radius: 5px 5px 0 0;
+  border-radius: 4% 4% 0 0;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15%;
+  left: 5%;
 `;
 
 const FoldingSeam = styled.div`
-  width: 5px;
-  height: 70px;
+  width: 3%;
+  height: 70%;
   background-color: #5d4037;
   position: absolute;
-  top: 30px;
-  left: 100px;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
 `;

@@ -17,27 +17,27 @@ export const ClassicArcade = () => {
 };
 
 const ArcadeCabinet = styled.div`
-  width: 120px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   background-color: #1A1A1A;
-  border-radius: 10px;
+  border-radius: 8%;
   position: relative;
-  border: 4px solid #FFD700;
+  border: 3% solid #FFD700;
 `;
 
 const ArcadeScreen = styled.div`
-  width: 90px;
-  height: 70px;
+  width: 75%;
+  height: 40%;
   background-color: #000080;
-  border: 3px solid #C0C0C0;
+  border: 2% solid #C0C0C0;
   position: absolute;
-  top: 20px;
-  left: 15px;
+  top: 10%;
+  left: 12.5%;
   &::before {
     content: 'PAC-MAN';
     color: #FFFF00;
     font-family: 'Arial', sans-serif;
-    font-size: 12px;
+    font-size: 60%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -46,29 +46,29 @@ const ArcadeScreen = styled.div`
 `;
 
 const ControlPanel = styled.div`
-  width: 100px;
-  height: 40px;
+  width: 85%;
+  height: 20%;
   background-color: #333333;
   position: absolute;
-  bottom: 20px;
-  left: 10px;
+  bottom: 10%;
+  left: 7.5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 10%;
 `;
 
 const Joystick = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 20%;
+  height: 20%;
   background-color: #808080;
   border-radius: 50%;
   position: relative;
   &::after {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 40%;
+    height: 40%;
     background-color: #000000;
     border-radius: 50%;
     top: 50%;
@@ -79,12 +79,12 @@ const Joystick = styled.div`
 
 const Buttons = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 6%;
 `;
 
 const Button = styled.div`
-  width: 15px;
-  height: 15px;
+  width: 12%;
+  height: 12%;
   background-color: ${props => props.color || '#FF0000'};
   border-radius: 50%;
 `;

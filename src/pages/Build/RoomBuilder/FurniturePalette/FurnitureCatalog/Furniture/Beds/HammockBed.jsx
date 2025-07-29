@@ -4,35 +4,36 @@ export const HammockBed = () => {
   return (
     <BedContainer>
       <Hammock />
-      <Rope left />
-      <Rope right />
+      <Rope $left />
+      <Rope $right />
     </BedContainer>
   );
 };
 
 const BedContainer = styled.div`
-  width: 180px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 const Hammock = styled.div`
-  width: 140px;
-  height: 80px;
+  width: 70%;
+  height: 50%;
   background-color: #8D6E63;
   border-radius: 50% 50% 0 0;
   position: absolute;
-  bottom: 10px;
-  left: 20px;
+  bottom: 10%;
 `;
 
 const Rope = styled.div`
-  width: 5px;
-  height: 60px;
+  width: 3%;
+  height: 40%;
   background-color: #5D4037;
   position: absolute;
-  top: 0;
-  ${props => props.left ? 'left: 30px;' : 'right: 30px;'}
+  top: 5%;
+  ${props => props.$left ? 'left: 20%;' : 'right: 20%;'}
   transform-origin: top;
-  transform: rotate(${props => props.left ? '15deg' : '-15deg'});
+  transform: rotate(${props => props.$left ? '15deg' : '-15deg'});
 `;

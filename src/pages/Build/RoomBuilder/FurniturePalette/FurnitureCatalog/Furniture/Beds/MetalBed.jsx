@@ -14,28 +14,28 @@ export const MetalBed = () => {
 };
 
 const BedContainer = styled.div`
-  width: 200px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const BedFrame = styled.div`
-  width: 180px;
-  height: 120px;
+  width: 80%;
+  height: 70%;
   background-color: #E0E0E0;
   border: 2px solid #BDBDBD;
   position: absolute;
-  top: 15px;
-  left: 10px;
+  top: 15%;
+  left: 10%;
 `;
 
 const Mattress = styled.div`
-  width: 170px;
-  height: 100px;
+  width: 90%;
+  height: 80%;
   background-color: #FFF8E1;
   position: absolute;
-  top: 10px;
-  left: 5px;
+  top: 10%;
+  left: 5%;
 `;
 
 const Legs = styled.div`
@@ -45,14 +45,14 @@ const Legs = styled.div`
 `;
 
 const Leg = styled.div`
-  width: 8px;
-  height: 8px;
+  width: 5%;
+  height: 5%;
   background-color: #616161;
   position: absolute;
-  bottom: 5px;
+  bottom: 5%;
   
-  &:nth-child(1) { left: 15px; }
-  &:nth-child(2) { right: 15px; }
-  &:nth-child(3) { left: 15px; top: 130px; }
-  &:nth-child(4) { right: 15px; top: 130px; }
+  &:nth-child(1) { left: 10%; }
+  &:nth-child(2) { right: 10%; }
+  &:nth-child(3) { left: 10%; top: 80%; }
+  &:nth-child(4) { right: 10%; top: 80%; }
 `;
