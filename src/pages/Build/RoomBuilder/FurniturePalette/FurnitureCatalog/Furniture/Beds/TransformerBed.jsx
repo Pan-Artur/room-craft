@@ -10,32 +10,33 @@ export const TransformerBed = () => {
 };
 
 const BedContainer = styled.div`
-  width: 200px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const Base = styled.div`
-  width: 180px;
-  height: 100px;
+  width: 80%;
+  height: 60%;
   background-color: #78909C;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 10%;
+  left: 10%;
 `;
 
 const FoldPart = styled.div`
-  width: 180px;
-  height: 40px;
+  width: 80%;
+  height: 25%;
   background-color: #546E7A;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 10%;
+  
   &::after {
     content: '';
     position: absolute;
     width: 100%;
-    height: 5px;
+    height: 15%;
     background-color: #37474F;
     bottom: 0;
   }

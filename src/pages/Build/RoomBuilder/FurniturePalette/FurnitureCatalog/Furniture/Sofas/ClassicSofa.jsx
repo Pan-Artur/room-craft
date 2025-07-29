@@ -5,45 +5,44 @@ export const ClassicSofa = () => {
     <ClassicSofaContainer>
       <SofaBase />
       <SofaBack />
-      <SofaArmrest left />
-      <SofaArmrest right />
+      <SofaArmrest $left />
+      <SofaArmrest $right />
     </ClassicSofaContainer>
   );
 };
 
 const ClassicSofaContainer = styled.div`
-  width: 200px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const SofaBase = styled.div`
-  width: 180px;
-  height: 80px;
+  width: 90%;
+  height: 65%;
   background-color: #8b4513;
-  border-radius: 10px;
+  border-radius: 8%;
   position: absolute;
-  top: 40px;
-  left: 10px;
+  top: 35%;
+  left: 5%;
 `;
 
 const SofaBack = styled.div`
-  width: 180px;
-  height: 20px;
+  width: 90%;
+  height: 15%;
   background-color: #654321;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8% 8% 0 0;
   position: absolute;
-  top: 20px;
-  left: 10px;
+  top: 20%;
+  left: 5%;
 `;
 
 const SofaArmrest = styled.div`
-  width: 20px;
-  height: 60px;
+  width: 10%;
+  height: 50%;
   background-color: #654321;
-  border-radius: 5px;
+  border-radius: 4%;
   position: absolute;
-  top: 30px;
-  left: ${props => props.left ? '0' : 'auto'};
-  right: ${props => props.right ? '0' : 'auto'};
+  top: 25%;
+  ${props => props.$left ? 'left: 0;' : 'right: 0;'}
 `;

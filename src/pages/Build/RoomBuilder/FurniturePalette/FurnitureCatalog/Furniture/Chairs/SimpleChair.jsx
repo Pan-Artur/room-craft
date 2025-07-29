@@ -10,26 +10,26 @@ export const SimpleChair = () => {
 };
 
 const ChairContainer = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ChairSeat = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 60%;
+  height: 60%;
   background-color: #8b4513;
-  border-radius: 5px;
+  border-radius: 5%;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 20%;
+  left: 20%;
 `;
 
 const ChairBack = styled.div`
-  width: 20px;
-  height: 60px;
+  width: 20%;
+  height: 60%;
   background-color: #654321;
   position: absolute;
   top: 0;
-  left: 40px;
+  left: 40%;
 `;

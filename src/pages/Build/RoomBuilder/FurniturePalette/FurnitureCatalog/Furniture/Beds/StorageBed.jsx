@@ -6,50 +6,51 @@ export const StorageBed = () => {
       <BedFrame>
         <Mattress />
         <Drawer />
-        <Drawer right />
+        <Drawer $right />
       </BedFrame>
     </BedContainer>
   );
 };
 
 const BedContainer = styled.div`
-  width: 200px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const BedFrame = styled.div`
-  width: 180px;
-  height: 120px;
+  width: 80%;
+  height: 70%;
   background-color: #5D4037;
   position: absolute;
-  top: 15px;
-  left: 10px;
+  top: 15%;
+  left: 10%;
 `;
 
 const Mattress = styled.div`
-  width: 180px;
-  height: 80px;
+  width: 100%;
+  height: 65%;
   background-color: #D7CCC8;
   position: absolute;
   top: 0;
-  left: 0;
 `;
 
 const Drawer = styled.div`
-  width: 80px;
-  height: 20px;
+  width: 45%;
+  height: 15%;
   background-color: #3E2723;
   position: absolute;
   bottom: 0;
-  ${props => props.right ? 'right: 0;' : 'left: 0;'}
+  ${props => props.$right ? 'right: 0;' : 'left: 0;'}
+  
   &::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 2px;
+    width: 15%;
+    height: 10%;
     background-color: #BCAAA4;
-    top: 9px;
-    left: 10px;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
   }
 `;

@@ -10,28 +10,28 @@ export const ModernChair = () => {
 };
 
 const ModernChairContainer = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ModernSeat = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 70%;
+  height: 70%;
   background-color: #e0e0e0;
-  border-radius: 10px;
+  border-radius: 10%;
   position: absolute;
-  top: 15px;
-  left: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  top: 15%;
+  left: 15%;
+  box-shadow: 0 0 10% rgba(0, 0, 0, 0.1);
 `;
 
 const ModernBack = styled.div`
-  width: 70px;
-  height: 20px;
+  width: 70%;
+  height: 20%;
   background-color: #a0a0a0;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10% 10% 0 0;
   position: absolute;
   top: 0;
-  left: 15px;
+  left: 15%;
 `;

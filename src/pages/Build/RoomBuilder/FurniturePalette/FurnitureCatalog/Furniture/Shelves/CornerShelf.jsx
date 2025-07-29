@@ -10,29 +10,29 @@ export const CornerShelf = () => {
 };
 
 const CornerShelfContainer = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const CornerBoard = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 80%;
+  height: 80%;
   background-color: #D2B48C;
-  border: 3px solid #A0522D;
+  border: 2.5% solid #A0522D;
   clip-path: polygon(0 0, 100% 0, 0 100%);
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 10%;
 `;
 
 const WallSupport = styled.div`
-  width: 5px;
-  height: 110px;
+  width: 4%;
+  height: 90%;
   background-color: #A0522D;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 5%;
+  left: 5%;
   transform: rotate(45deg);
   transform-origin: top left;
 `;

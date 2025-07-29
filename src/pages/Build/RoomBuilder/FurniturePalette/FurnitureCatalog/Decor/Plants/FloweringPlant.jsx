@@ -12,42 +12,45 @@ export const FloweringPlant = () => {
 };
 
 const FlowerContainer = styled.div`
-  width: 100px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 const FlowerPot = styled.div`
-  width: 60px;
-  height: 45px;
+  width: 60%;
+  height: 25%;
   background-color: #CD853F;
-  border-radius: 0 0 10px 10px;
-  position: absolute;
-  bottom: 0;
-  left: 20px;
+  border-radius: 0 0 10% 10%;
+  position: relative;
 `;
 
 const Stem = styled.div`
-  width: 6px;
-  height: 80px;
+  width: 6%;
+  height: 50%;
   background-color: #228B22;
   position: absolute;
-  bottom: 45px;
-  left: 47px;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const LeafPair = styled.div`
-  width: 60px;
-  height: 30px;
+  width: 60%;
+  height: 20%;
   position: absolute;
-  bottom: 70px;
-  left: 20px;
+  bottom: 40%;
+  left: 20%;
 
   &::before, &::after {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 15px;
+    width: 25%;
+    height: 15%;
     background-color: #228B22;
     border-radius: 50% 0 50% 50%;
   }
@@ -64,22 +67,24 @@ const LeafPair = styled.div`
 `;
 
 const Flower = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 30%;
+  height: 30%;
   background-color: #FF69B4;
   border-radius: 50%;
   position: absolute;
-  top: 25px;
-  left: 35px;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
 
   &::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 33%;
+    height: 33%;
     background-color: #FFD700;
     border-radius: 50%;
-    top: 10px;
-    left: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `;

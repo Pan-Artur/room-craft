@@ -10,25 +10,25 @@ export const OfficeTable = () => {
 };
 
 const OfficeTableContainer = styled.div`
-  width: 200px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const TableSurface = styled.div`
-  width: 180px;
-  height: 100px;
+  width: 90%;
+  height: 80%;
   background-color: #2F4F4F;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 5%;
 `;
 
 const DrawerSection = styled.div`
-  width: 180px;
-  height: 20px;
+  width: 90%;
+  height: 15%;
   background-color: #1E3A3A;
   position: absolute;
-  top: 90px;
-  left: 10px;
+  top: 75%;
+  left: 5%;
 `;

@@ -14,27 +14,27 @@ export const RacingArcade = () => {
 };
 
 const RacingCabinet = styled.div`
-  width: 150px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(145deg, #E60000, #990000);
-  border-radius: 15px;
+  border-radius: 10%;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 3% 8% rgba(0,0,0,0.3);
 `;
 
 const Widescreen = styled.div`
-  width: 130px;
-  height: 60px;
+  width: 85%;
+  height: 40%;
   background-color: #000000;
-  border: 3px solid #333333;
+  border: 2% solid #333333;
   position: absolute;
-  top: 15px;
-  left: 10px;
+  top: 10%;
+  left: 7.5%;
   &::before {
     content: 'RACING';
     color: #FFFFFF;
     font-family: 'Arial', sans-serif;
-    font-size: 14px;
+    font-size: 70%;
     font-weight: bold;
     position: absolute;
     top: 50%;
@@ -44,18 +44,18 @@ const Widescreen = styled.div`
 `;
 
 const SteeringWheel = styled.div`
-  width: 40px;
-  height: 40px;
-  border: 4px solid #333333;
+  width: 25%;
+  height: 25%;
+  border: 3% solid #333333;
   border-radius: 50%;
   position: absolute;
-  top: 80px;
-  left: 30px;
+  top: 55%;
+  left: 20%;
   &::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 25%;
+    height: 25%;
     background-color: #333333;
     border-radius: 50%;
     top: 50%;
@@ -66,15 +66,15 @@ const SteeringWheel = styled.div`
 
 const Pedals = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 10%;
   position: absolute;
-  bottom: 15px;
-  left: 40px;
+  bottom: 10%;
+  left: 25%;
 `;
 
 const Pedal = styled.div`
-  width: 20px;
-  height: 10px;
+  width: 13%;
+  height: 7%;
   background-color: #333333;
-  border-radius: 3px;
+  border-radius: 20%;
 `;

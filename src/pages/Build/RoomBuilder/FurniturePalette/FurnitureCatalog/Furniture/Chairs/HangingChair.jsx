@@ -5,34 +5,34 @@ export const HangingChair = () => {
     <ChairContainer>
       <ChairSeat />
       <ChairRope />
-      <ChairRope right />
+      <ChairRope $right />
     </ChairContainer>
   );
 };
 
 const ChairContainer = styled.div`
-  width: 100px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const ChairSeat = styled.div`
-  width: 70px;
-  height: 50px;
+  width: 70%;
+  height: 40%;
   background-color: #5D4037;
-  border-radius: 10px;
+  border-radius: 10%;
   position: absolute;
-  bottom: 20px;
-  left: 15px;
+  bottom: 15%;
+  left: 15%;
 `;
 
 const ChairRope = styled.div`
-  width: 5px;
-  height: 80px;
+  width: 5%;
+  height: 65%;
   background-color: #212121;
   position: absolute;
   top: 0;
-  left: ${props => props.right ? '75px' : '20px'};
+  ${props => props.$right ? 'left: 75%;' : 'left: 20%;'}
   transform-origin: top;
-  transform: rotate(${props => props.right ? '-15deg' : '15deg'});
+  transform: rotate(${props => props.$right ? '-15deg' : '15deg'});
 `;

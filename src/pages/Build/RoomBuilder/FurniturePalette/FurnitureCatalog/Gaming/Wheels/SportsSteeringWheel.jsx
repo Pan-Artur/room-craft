@@ -5,36 +5,36 @@ export const SportSteeringWheel = () => {
     <SteeringWheelContainer>
       <WheelRing>
         <WheelHub />
-        <WheelSpoke />
-        <WheelSpoke rotate="45deg" />
-        <WheelSpoke rotate="90deg" />
-        <WheelSpoke rotate="135deg" />
+        <WheelSpoke $rotate="0" />
+        <WheelSpoke $rotate="45deg" />
+        <WheelSpoke $rotate="90deg" />
+        <WheelSpoke $rotate="135deg" />
       </WheelRing>
-      <WheelGrip position="top" />
-      <WheelGrip position="bottom" />
+      <WheelGrip $position="top" />
+      <WheelGrip $position="bottom" />
     </SteeringWheelContainer>
   );
 };
 
 const SteeringWheelContainer = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
 `;
 
 const WheelRing = styled.div`
-  width: 100px;
-  height: 100px;
-  border: 8px solid #333;
+  width: 80%;
+  height: 80%;
+  border: 6% solid #333;
   border-radius: 50%;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 10%;
+  left: 10%;
 `;
 
 const WheelHub = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 15%;
+  height: 15%;
   background-color: #555;
   border-radius: 50%;
   position: absolute;
@@ -44,23 +44,23 @@ const WheelHub = styled.div`
 `;
 
 const WheelSpoke = styled.div`
-  width: 2px;
-  height: 40px;
+  width: 1.5%;
+  height: 35%;
   background-color: #444;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(${props => props.rotate || '0'});
+  transform: translate(-50%, -50%) rotate(${props => props.$rotate || '0'});
   transform-origin: center top;
 `;
 
 const WheelGrip = styled.div`
-  width: 30px;
-  height: 10px;
+  width: 25%;
+  height: 8%;
   background-color: #222;
-  border-radius: 5px;
+  border-radius: 4%;
   position: absolute;
-  top: ${props => props.position === 'top' ? '5px' : '105px'};
+  top: ${props => props.$position === 'top' ? '5%' : '87%'};
   left: 50%;
   transform: translateX(-50%);
 `;

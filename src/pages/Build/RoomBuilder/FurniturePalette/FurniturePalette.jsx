@@ -73,12 +73,12 @@ import { GamingPC } from "./FurnitureCatalog/Technology/Computers/GamingPC";
 import { Laptop } from "./FurnitureCatalog/Technology/Computers/Laptop";
 
 //Televisions
-import { FlatTV } from "./FurnitureCatalog/Technology/Televisions/FlatTV";
+// import { FlatTV } from "./FurnitureCatalog/Technology/Televisions/FlatTV";
 
 //Lamps
-import { DeskLamp } from "./FurnitureCatalog/Technology/Lamps/DeskLamp";
-import { FloorLamp } from "./FurnitureCatalog/Technology/Lamps/FloorLamp";
-import { ModernLamp } from "./FurnitureCatalog/Technology/Lamps/ModernLamp";
+// import { DeskLamp } from "./FurnitureCatalog/Technology/Lamps/DeskLamp";
+// import { FloorLamp } from "./FurnitureCatalog/Technology/Lamps/FloorLamp";
+// import { ModernLamp } from "./FurnitureCatalog/Technology/Lamps/ModernLamp";
 
 //Decor
 
@@ -237,22 +237,22 @@ export const FurniturePalette = ({ onSelectItem }) => {
             { name: "Геймерський ПК", component: <GamingPC /> },
           ],
         },
-        {
-          id: "tv",
-          name: "Телевізори",
-          icon: <FaTv size={20} />,
-          components: [{ name: "Телевізор", component: <FlatTV /> }],
-        },
-        {
-          id: "lamp",
-          name: "Лампи",
-          icon: <LuLamp size={20} />,
-          components: [
-            { name: "Настільна лампа", component: <DeskLamp /> },
-            { name: "Сучасна LED лампа", component: <ModernLamp /> },
-            { name: "Підлогова лампа", component: <FloorLamp /> },
-          ],
-        },
+        // {
+        //   id: "tv",
+        //   name: "Телевізори",
+        //   icon: <FaTv size={20} />,
+        //   components: [{ name: "Телевізор", component: <FlatTV /> }],
+        // },
+        // {
+        //   id: "lamp",
+        //   name: "Лампи",
+        //   icon: <LuLamp size={20} />,
+        //   components: [
+        //     { name: "Настільна лампа", component: <DeskLamp /> },
+        //     { name: "Сучасна LED лампа", component: <ModernLamp /> },
+        //     { name: "Підлогова лампа", component: <FloorLamp /> },
+        //   ],
+        // },
       ],
     },
     decor: {

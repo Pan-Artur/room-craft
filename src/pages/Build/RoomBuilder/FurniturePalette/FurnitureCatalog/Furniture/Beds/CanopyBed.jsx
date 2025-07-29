@@ -3,53 +3,47 @@ import styled from 'styled-components';
 export const CanopyBed = () => {
   return (
     <BedContainer>
-      <BedFrame>
-        <Mattress />
-        <CanopyPillar left />
-        <CanopyPillar right />
-        <CanopyTop />
-      </BedFrame>
+      <Mattress />
+      <CanopyPillar $left />
+      <CanopyPillar $right />
+      <CanopyTop />
     </BedContainer>
   );
 };
 
 const BedContainer = styled.div`
-  width: 200px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   position: relative;
-`;
-
-const BedFrame = styled.div`
-  width: 180px;
-  height: 150px;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `;
 
 const Mattress = styled.div`
-  width: 180px;
-  height: 100px;
+  width: 80%;
+  height: 60%;
   background-color: #F5F5F5;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  border-radius: 5% 5% 0 0;
+  position: relative;
+  z-index: 1;
 `;
 
 const CanopyPillar = styled.div`
-  width: 10px;
-  height: 150px;
+  width: 8%;
+  height: 80%;
   background-color: #D7CCC8;
   position: absolute;
   bottom: 0;
-  ${props => props.left ? 'left: 0;' : 'right: 0;'}
+  ${props => props.$left ? 'left: 10%;' : 'right: 10%;'}
+  z-index: 2;
 `;
 
 const CanopyTop = styled.div`
-  width: 200px;
-  height: 10px;
+  width: 100%;
+  height: 8%;
   background-color: #D7CCC8;
   position: absolute;
   top: 0;
-  left: -10px;
+  z-index: 3;
 `;

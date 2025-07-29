@@ -3,47 +3,37 @@ import styled from 'styled-components';
 export const OrientalRug = () => {
   return (
     <RugContainer>
-      <RugBase>
-        <RugPattern />
-        <RugBorder />
-      </RugBase>
+      <RugPattern />
+      <RugBorder />
     </RugContainer>
   );
 };
 
 const RugContainer = styled.div`
-  width: 160px;
-  height: 240px;
+  width: 100%;
+  height: 100%;
   position: relative;
-`;
-
-const RugBase = styled.div`
-  width: 140px;
-  height: 220px;
-  background-color: #8B0000;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const RugPattern = styled.div`
-  width: 100px;
-  height: 150px;
-  background: linear-gradient(45deg, #FFD700 25%, transparent 25%) -50px 0,
-              linear-gradient(-45deg, #FFD700 25%, transparent 25%) -50px 0,
-              linear-gradient(45deg, transparent 75%, #FFD700 75%),
-              linear-gradient(-45deg, transparent 75%, #FFD700 75%);
-  background-size: 100px 100px;
-  position: absolute;
-  top: 35px;
-  left: 20px;
+  width: 60%;
+  height: 80%;
+  background: 
+    linear-gradient(45deg, #FFD700 25%, transparent 25%) -25% 0,
+    linear-gradient(-45deg, #FFD700 25%, transparent 25%) -25% 0,
+    linear-gradient(45deg, transparent 75%, #FFD700 75%),
+    linear-gradient(-45deg, transparent 75%, #FFD700 75%);
+  background-size: 50% 50%;
+  background-color: #8B0000;
 `;
 
 const RugBorder = styled.div`
-  width: 130px;
-  height: 210px;
-  border: 5px solid #FFD700;
+  width: 80%;
+  height: 90%;
+  border: 3% solid #FFD700;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  pointer-events: none;
 `;
