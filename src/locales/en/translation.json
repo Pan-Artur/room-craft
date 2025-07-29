@@ -2,7 +2,6 @@
   "header": {
     "page1": "Home",
     "page2": "Build",
-    "page3": "Contacts",
 
     "language": "Language"
   },
@@ -94,5 +93,126 @@
     "anchor3": "FAQ",
 
     "authors": "Authors: Artur Pankovets, Maksym Ryaboshapka"
+  },
+
+  "catalog": {
+    "title": "Furniture Catalog",
+    "placeholder": "Search furniture..."
+  },
+
+  "furniture": {
+    "furnitureName": "Furniture",
+    "beds": {
+      "name": "Beds",
+
+      "bed1": "Palace Bed",
+      "bed2": "Folding Bed",
+      "bed3": "Hammock Bed",
+      "bed4": "Metal Bed",
+      "bed5": "Drawer Bed",
+      "bed6": "Transformer Bed"
+    },
+    "sofas": {
+      "name": "Sofas",
+
+      "sofa1": "Classic Sofa",
+      "sofa2": "Modern Sofa",
+      "sofa3": "Corner Sofa",
+      "sofa4": "Sofa Bed",
+      "sofa5": "Folding Sofa"
+    },
+    "chairs": {
+      "name": "Chairs",
+
+      "chair1": "Wooden Chair",
+      "chair2": "Cocoon Chair",
+      "chair3": "Gaming Chair",
+      "chair4": "Garden Chair",
+      "chair5": "Hanging Chair",
+      "chair6": "Mesh Chair",
+      "chair7": "Modern Chair",
+      "chair8": "Office Chair",
+      "chair9": "Rocking Chair",
+      "chair10": "Simple Chair"
+    },
+    "desks": {
+      "name": "Desks",
+
+      "desk1": "Wooden Desk",
+      "desk2": "Glass Desk",
+      "desk3": "Office Desk",
+      "desk4": "Coffee Table",
+      "desk5": "Folding Desk"
+    },
+    "wardrobe": {
+      "name": "Wardrobes",
+
+      "wardrobe1": "Classic Wardrobe",
+      "wardrobe2": "Modern Wardrobe",
+      "wardrobe3": "Bookcase",
+      "wardrobe4": "Shelf Wardrobe",
+      "wardrobe5": "Closet Wardrobe"
+    },
+    "shelfs": {
+      "name": "Shelves",
+
+      "shelf1": "Classic Shelf",
+      "shelf2": "Modern Shelf",
+      "shelf3": "Corner Shelf"
+    },
+    "electronicsName": "Electronics",
+    "pcs": {
+      "name": "Computers",
+
+      "pc1": "Desktop PC",
+      "pc2": "Laptop",
+      "pc3": "Gaming PC"
+    },
+    "tvs": {
+      "name": "TVs",
+
+      "tv": "Television"
+    },
+    "lamps": {
+      "name": "Lamps",
+
+      "lamp1": "Desk Lamp",
+      "lamp2": "Modern LED Lamp",
+      "lamp3": "Floor Lamp"
+    },
+    "decorName": "Decor",
+    "plants": {
+      "name": "Plants",
+
+      "plant1": "Cactus",
+      "plant2": "Leafy Plant",
+      "plant3": "Flowering Plant"
+    },
+    "rugs": {
+      "name": "Rugs",
+
+      "rug1": "Oriental Rug",
+      "rug2": "Modern Rug"
+    },
+    "gamingName": "Gaming",
+    "beanbags": {
+      "name": "Bean Bags",
+
+      "beanbag1": "Classic Round",
+      "beanbag2": "Modern Square",
+      "beanbag3": "Designer Star"
+    },
+    "wheels": {
+      "name": "Wheels",
+
+      "wheel1": "Sport Steering Wheel",
+      "wheel2": "Racing Wheel"
+    },
+    "arcades": {
+      "name": "Arcades",
+
+      "arcade1": "Classic Arcade Machine",
+      "arcade2": "Racing Arcade"
+    }
   }
 }
