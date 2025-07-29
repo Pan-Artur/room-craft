@@ -19,11 +19,35 @@ export const GlobalStyles = createGlobalStyle`
       monospace;
   }
 
+  .no-scroll {
+    overflow-y: hidden;
+  }
+
+  h1
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
   ul,
   ol {
     padding: 0;
     margin: 0;
 
     list-style: none;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
