@@ -8,39 +8,42 @@ import {
   Title,
   Description,
 } from "./styles/Features.styled";
+import { useTranslation } from "react-i18next";
 
-const features = [
-  {
-    icon: <GiSofa />,
-    title: "Безмежна творчість",
-    description:
-      "Поєднуйте тисячі елементів інтер’єру: колір, текстуру, розмір — дизайн без обмежень.",
-  },
-  {
-    icon: <GiSmartphone />,
-    title: "Доступність",
-    description:
-      "Працює на мобільних, планшетах і комп’ютерах — прямо в браузері.",
-  },
-  {
-    icon: <GiSave />,
-    title: "Збереження проектів",
-    description: "Ваші дизайни зберігаються в акаунті й доступні будь-коли.",
-  },
-];
+export const Features = () => {
+  const { t } = useTranslation();
 
-export const Features = () => (
-  <Section>
-    <Container>
-      <FeaturesWrapper>
-        {features.map((feature, i) => (
-          <Card key={i}>
-            <Icon>{feature.icon}</Icon>
-            <Title>{feature.title}</Title>
-            <Description>{feature.description}</Description>
-          </Card>
-        ))}
-      </FeaturesWrapper>
-    </Container>
-  </Section>
-);
+  const features = [
+    {
+      icon: <GiSofa />,
+      title: t("features.title1"),
+      description: t("features.description1"),
+    },
+    {
+      icon: <GiSmartphone />,
+      title: t("features.title2"),
+      description: t("features.description2"),
+    },
+    {
+      icon: <GiSave />,
+      title: t("features.title3"),
+      description: t("features.description3"),
+    },
+  ];
+
+  return (
+    <Section>
+      <Container>
+        <FeaturesWrapper>
+          {features.map((feature, i) => (
+            <Card key={i}>
+              <Icon>{feature.icon}</Icon>
+              <Title>{feature.title}</Title>
+              <Description>{feature.description}</Description>
+            </Card>
+          ))}
+        </FeaturesWrapper>
+      </Container>
+    </Section>
+  );
+};
