@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/room-craft/static/css/main.58462fbc.css",
+    "main.js": "/room-craft/static/js/main.99e05cb4.js",
+    "static/media/hero.webp": "/room-craft/static/media/hero.3221433fb06e494c0c58.webp",
+    "static/media/scandinavian.webp": "/room-craft/static/media/scandinavian.8cbb213e32687cbbc7ef.webp",
+    "static/media/minimalist.webp": "/room-craft/static/media/minimalist.efe51b56987e09e01074.webp",
+    "static/media/loft.webp": "/room-craft/static/media/loft.d718e95a5c8b9d2fe8ae.webp",
+    "static/media/logo.webp": "/room-craft/static/media/logo.7fa9d52d19d93eeac082.webp",
+    "index.html": "/room-craft/index.html",
+    "main.58462fbc.css.map": "/room-craft/static/css/main.58462fbc.css.map",
+    "main.99e05cb4.js.map": "/room-craft/static/js/main.99e05cb4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.99e05cb4.js"
+  ]
+}
