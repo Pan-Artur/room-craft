@@ -1,45 +1,48 @@
 import { FAQSection, Title, Accordion } from "./styles/FAQ.styled";
 import { Question } from "./Question";
-
-const questions = [
-  {
-    title: "Що це за інструмент?",
-    answer: "Це вебдодаток, що дозволяє легко створити дизайн кімнати, вибираючи меблі та кольори.",
-  },
-  {
-    title: "Чи потрібно щось встановлювати?",
-    answer: "Ні, все працює прямо у вашому браузері.",
-  },
-  {
-    title: "Чи можу я поділитися дизайном?",
-    answer: "Так! Ви можете експортувати зображення або поділитися посиланням.",
-  },
-  {
-    title: "Скільки це коштує?",
-    answer: "Базова версія — безкоштовна. Додаткові функції з’являться згодом.",
-  },
-  {
-    title: "Працює на мобільному?",
-    answer: "Так, інтерфейс адаптований під мобільні пристрої.",
-  },
-  {
-    title: "Як звернутись у підтримку?",
-    answer: "Напишіть нам у чат або на пошту — посилання внизу сторінки.",
-  },
-  {
-    title: "Чи можу я зберегти дизайн?",
-    answer: "Так, ми автоматично зберігаємо ваші проєкти у локальному сховищі.",
-  },
-  {
-    title: "Чи потрібна реєстрація?",
-    answer: "Ні, зараз реєстрація не потрібна — просто відкрийте і користуйтесь.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const FAQ = () => {
+  const { t } = useTranslation();
+
+  const questions = [
+    {
+      title: t("faq.question1"),
+      answer: t("faq.answer1"),
+    },
+    {
+      title: t("faq.question2"),
+      answer: t("faq.answer2"),
+    },
+    {
+      title: t("faq.question3"),
+      answer: t("faq.answer3"),
+    },
+    {
+      title: t("faq.question4"),
+      answer: t("faq.answer4"),
+    },
+    {
+      title: t("faq.question5"),
+      answer: t("faq.answer5"),
+    },
+    {
+      title: t("faq.question6"),
+      answer: t("faq.answer6"),
+    },
+    {
+      title: t("faq.question7"),
+      answer: t("faq.answer7"),
+    },
+    {
+      title: t("faq.question8"),
+      answer: t("faq.answer8"),
+    },
+  ];
+
   return (
     <FAQSection id="faq">
-      <Title>Поширені запитання</Title>
+      <Title>{t("faq.title")}</Title>
       <Accordion>
         {questions.map((q, i) => (
           <Question key={i} title={q.title}>

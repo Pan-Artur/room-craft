@@ -6,14 +6,17 @@ import {
   Authors,
 } from "./styles/Footer.styled";
 import { FaGithub } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const {t} = useTranslation();
+
   return (
     <FooterSection>
       <NavLinks>
-        <Anchor href="#how-it-works">Як це працює</Anchor>
-        <Anchor href="#reviews">Відгуки</Anchor>
-        <Anchor href="#faq">FAQ</Anchor>
+        <Anchor href="#how-it-works">{t("footer.anchor1")}</Anchor>
+        <Anchor href="#reviews">{t("footer.anchor2")}</Anchor>
+        <Anchor href="#faq">{t("footer.anchor3")}</Anchor>
       </NavLinks>
 
       <GithubLink
@@ -25,7 +28,7 @@ export const Footer = () => {
         <FaGithub />
       </GithubLink>
 
-      <Authors>Автори: Артур Панковець, Максим Рябошапка</Authors>
+      <Authors>{t("footer.authors")}</Authors>
     </FooterSection>
   );
 };

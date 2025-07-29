@@ -7,13 +7,26 @@ export const HeaderContainer = styled.header`
   align-items: center;
 `;
 
+export const HeaderWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+`;
+
 export const HeaderFlex = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (min-width: 768px) {
+    gap: 100px;
+  }
+
   @media screen and (min-width: 1200px) {
     justify-content: space-around;
+    gap: 200px;
   }
 `;
 
@@ -22,7 +35,7 @@ export const Logo = styled.a`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  
+
   & img {
     width: 24px;
     height: 24px;

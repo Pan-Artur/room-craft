@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   HeaderContainer,
+  HeaderWrapper,
   HeaderFlex,
   Logo,
   Nav,
@@ -13,10 +14,14 @@ import {
 import { Container } from "../Container/Container";
 import { IoClose as CrossIcon } from "react-icons/io5";
 import { GiHamburgerMenu as BurgerIcon } from "react-icons/gi";
+import { useTranslation } from "react-i18next";
 import logoImage from "../../assets/images/logo.webp";
+
+import { LanguageToggler } from "../LanguageToggler/LanguageToggler";
 
 export const Header = () => {
   const [isMenuOpen, setManuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleOpen = () => {
     setManuOpen(!isMenuOpen);
@@ -26,42 +31,46 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Container>
-        <HeaderFlex>
-          <Logo>
-            <img src={logoImage} alt="Logo" />
-            <Link to="/">
-              <span>RoomCraft</span>
-            </Link>
-          </Logo>
-
-          <Nav>
-            <Link to="/">Головна</Link>
-            <Link to="/build">Редактор</Link>
-            <Link to="/contacts">Контакти</Link>
-          </Nav>
-
-          <BurgerBtn onClick={toggleOpen}>
-            <BurgerIcon />
-          </BurgerBtn>
-
-          <BurgerMenu style={{ display: isMenuOpen ? "block" : "none" }}>
-            <SvgContainer onClick={toggleOpen}>
-              <CrossIcon />
-            </SvgContainer>
-
-            <BurgerNav>
-              <Link onClick={toggleOpen} to="/">
-                Головна
+        <HeaderWrapper>
+          <HeaderFlex>
+            <Logo>
+              <img src={logoImage} alt="Logo" />
+              <Link to="/">
+                <span>RoomCraft</span>
               </Link>
-              <Link onClick={toggleOpen} to="/build">
-                Редактор
-              </Link>
-              <Link onClick={toggleOpen} to="/contacts">
-                Контакти
-              </Link>
-            </BurgerNav>
-          </BurgerMenu>
-        </HeaderFlex>
+            </Logo>
+  
+            <Nav>
+              <Link to="/">{t("header.page1")}</Link>
+              <Link to="/build">{t("header.page2")}</Link>
+              <Link to="/contacts">{t("header.page3")}</Link>
+            </Nav>
+  
+            <BurgerBtn onClick={toggleOpen}>
+              <BurgerIcon />
+            </BurgerBtn>
+  
+            <BurgerMenu style={{ display: isMenuOpen ? "block" : "none" }}>
+              <SvgContainer onClick={toggleOpen}>
+                <CrossIcon />
+              </SvgContainer>
+  
+              <BurgerNav>
+                <Link onClick={toggleOpen} to="/">
+                  {t("header.page1")}
+                </Link>
+                <Link onClick={toggleOpen} to="/build">
+                  {t("header.page2")}
+                </Link>
+                <Link onClick={toggleOpen} to="/contacts">
+                  {t("header.page3")}
+                </Link>
+              </BurgerNav>
+            </BurgerMenu>
+          </HeaderFlex>
+  
+          <LanguageToggler />
+        </HeaderWrapper>
       </Container>
     </HeaderContainer>
   );
