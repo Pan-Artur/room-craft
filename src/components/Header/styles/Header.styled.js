@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const Logo = styled.p``;
 
-export const List = styled.ul``;
+export const List = styled.nav``;
 
 export const Item = styled.li``;
 

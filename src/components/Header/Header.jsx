@@ -1,21 +1,17 @@
-import { Logo, List, Item, Link } from "./styles/Header.styled";
+import { Link } from 'react-router-dom';
+
+import { Logo, List } from "./styles/Header.styled";
 
 export const Header = () => {
   return (
-    <> 
+    <header> 
       <Logo>RoomCraft</Logo>
 
       <List>
-        <Item>
-          <Link>Головна</Link>
-        </Item>
-        <Item>
-          <Link>Редактор</Link>
-        </Item>
-        <Item>
-          <Link>Контакти</Link>
-        </Item>
+        <Link to="/">Головна</Link>
+        <Link to="/build">Редактор</Link>
+        <Link to="/contacts">Контакти</Link>
       </List>
-    </>
+    </header>
   );
 }
