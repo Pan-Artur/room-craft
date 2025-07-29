@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# 🏥 RoomCraft — Створи кімнату своєї мрії
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Цифровий планувальник кімнати, що допомагає підліткам та молоді візуалізувати ідеальний житловий простір.
+> 🎮 Це як The Sims, але для реального життя!
 
-## Available Scripts
+## 🔍 Про що цей проєкт?
 
-In the project directory, you can run:
+Уяви, що ти хочеш облаштувати свою кімнату: геймерський сетап, куточок для творчості або книжкову нішу. Але як зрозуміти, **чи все вміститься** і **як це буде виглядати**?
 
-### `npm start`
+**RoomCraft** — це інтуїтивний конструктор, у якому можна:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* розставляти меблі в кімнаті, як на мапі зверху
+* створювати власний простір без зайвих витрат
+* зберігати результат і повертатися до нього пізніше
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Основний функціонал
 
-### `npm test`
+* Сітка-план 6x6 для розміщення об’єктів
+* Каталог з 15+ предметами (меблі, техніка, декор)
+* Перетягування меблів на план
+* Анімації при виборі й розміщенні
+* Можливість зберегти дизайн або почати заново
+* Інтуїтивний інтерфейс
+* Адаптивність для мобільних і планшетів
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌟 Унікальні функції
 
-### `npm run build`
+* 🎨 **Галерея стилів** — натхнення від популярних інтер’єрних рішень (сканди, лофт, мінімалізм)
+* 🌍 **Перемикач мови (UA/EN)** — повна локалізація інтерфейсу
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Використані технології
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **React** + **React Hooks**
+* **Styled Components**
+* **i18next** для мультимовності
+* **HTML5 Drag & Drop API**
+* **Webpack** для швидкої розробки
+* **GitHub Pages** для деплою
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Як запустити проєкт локально
 
-### `npm run eject`
+```bash
+git clone https://github.com/Pan-Artur/room-craft.git
+cd room-craft
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔗 [Демо-посилання](https://yourusername.github.io/roomcraft)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🖼️ Демо-відео
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> (тут вставити посилання на відео або gif-демо)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🧐 Що далі?
 
-## Learn More
+У планах:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Додати режим "Feng Shui"
+* Mood board: вплив кольору на настрій
+* Профілі користувачів та збереження кількох дизайнів
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📩 Якщо проєкт тобі сподобався — залиш зірочку ⭐ на GitHub або напиши фідбек!
