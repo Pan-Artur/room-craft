@@ -5,7 +5,8 @@ import { Footer } from './components/Footer/Footer';
 import { Main } from './pages/Main/Main';
 import { Build } from './pages/Build/Build';
 
-const basename = process.env.PUBLIC_URL || '/';
+// Для локальної розробки використовуємо '/', для GitHub Pages - '/room-craft/'
+const basename = process.env.NODE_ENV === 'production' ? '/' : '/room-craft';
 
 export const App = () => {
   return (
