@@ -5,17 +5,19 @@ import { Footer } from './components/Footer/Footer';
 import { Main } from './pages/Main/Main';
 import { Build } from './pages/Build/Build';
 
+const basename = process.env.PUBLIC_URL || '/';
+
 export const App = () => {
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Main />}>Головна</Route>
-          <Route path="/build" element={<Build />}>Редактор</Route>
+          <Route path="/" element={<Main />} />
+          <Route path="/build" element={<Build />} />
         </Routes>
         <Footer />
       </div>
     </Router>
   );
-}
+};
