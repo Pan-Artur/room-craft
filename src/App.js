@@ -6,7 +6,7 @@ import { Main } from './pages/Main/Main';
 import { Build } from './pages/Build/Build';
 
 // Для локальної розробки використовуємо '/', для GitHub Pages - '/room-craft/'
-const basename = process.env.NODE_ENV === 'production' ? '/' : '/room-craft';
+const basename = process.env.NODE_ENV === '/';
 
 export const App = () => {
   return (
