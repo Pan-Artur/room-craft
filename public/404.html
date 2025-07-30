@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Перенаправляємо на головну сторінку з подальшим переходом
+      sessionStorage.redirect = location.pathname;
+      location.replace('/room-craft/');
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html>
