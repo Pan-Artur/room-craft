@@ -7,7 +7,6 @@ import { Container } from "../../../../components/Container/Container";
 //Beds
 import { CanopyBed } from "./FurnitureCatalog/Furniture/Beds/CanopyBed";
 import { FoldingBed } from "./FurnitureCatalog/Furniture/Beds/FoldingBed";
-import { HammockBed } from "./FurnitureCatalog/Furniture/Beds/HammockBed";
 import { MetalBed } from "./FurnitureCatalog/Furniture/Beds/MetalBed";
 import { StorageBed } from "./FurnitureCatalog/Furniture/Beds/StorageBed";
 import { TransformerBed } from "./FurnitureCatalog/Furniture/Beds/TransformerBed";
@@ -148,12 +147,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.beds.name"),
           icon: <GiBed size={20} />,
           components: [
-            { name: t("furniture.beds.bed1"), component: <CanopyBed /> },
-            { name: t("furniture.beds.bed2"), component: <FoldingBed /> },
-            { name: t("furniture.beds.bed3"), component: <HammockBed /> },
-            { name: t("furniture.beds.bed4"), component: <MetalBed /> },
-            { name: t("furniture.beds.bed5"), component: <StorageBed /> },
-            { name: t("furniture.beds.bed6"), component: <TransformerBed /> },
+            { name: t("furniture.beds.bed1"), component: CanopyBed },
+            { name: t("furniture.beds.bed2"), component: FoldingBed },
+            { name: t("furniture.beds.bed4"), component: MetalBed },
+            { name: t("furniture.beds.bed5"), component: StorageBed },
+            { name: t("furniture.beds.bed6"), component: TransformerBed },
           ],
         },
         {
@@ -161,11 +159,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.sofas.name"),
           icon: <GiSofa size={20} />,
           components: [
-            { name: t("furniture.sofas.sofa1"), component: <ClassicSofa /> },
-            { name: t("furniture.sofas.sofa2"), component: <ModernSofa /> },
-            { name: t("furniture.sofas.sofa3"), component: <CornerSofa /> },
-            { name: t("furniture.sofas.sofa4"), component: <SofaBed /> },
-            { name: t("furniture.sofas.sofa5"), component: <FoldingSofa /> },
+            { name: t("furniture.sofas.sofa1"), component: ClassicSofa },
+            { name: t("furniture.sofas.sofa2"), component: ModernSofa },
+            { name: t("furniture.sofas.sofa3"), component: CornerSofa },
+            { name: t("furniture.sofas.sofa4"), component: SofaBed },
+            { name: t("furniture.sofas.sofa5"), component: FoldingSofa },
           ],
         },
         {
@@ -177,15 +175,15 @@ export const FurniturePalette = ({ onSelectItem }) => {
               name: t("furniture.chairs.chair1"),
               component: <ClassicWoodChair />,
             },
-            { name: t("furniture.chairs.chair2"), component: <CocoonChair /> },
-            { name: t("furniture.chairs.chair3"), component: <GamingChair /> },
-            { name: t("furniture.chairs.chair4"), component: <GardenChair /> },
-            { name: t("furniture.chairs.chair5"), component: <HangingChair /> },
-            { name: t("furniture.chairs.chair6"), component: <MeshChair /> },
-            { name: t("furniture.chairs.chair7"), component: <ModernChair /> },
-            { name: t("furniture.chairs.chair8"), component: <OfficeChair /> },
-            { name: t("furniture.chairs.chair9"), component: <RockingChair /> },
-            { name: t("furniture.chairs.chair10"), component: <SimpleChair /> },
+            { name: t("furniture.chairs.chair2"), component: CocoonChair },
+            { name: t("furniture.chairs.chair3"), component: GamingChair },
+            { name: t("furniture.chairs.chair4"), component: GardenChair },
+            { name: t("furniture.chairs.chair5"), component: HangingChair },
+            { name: t("furniture.chairs.chair6"), component: MeshChair },
+            { name: t("furniture.chairs.chair7"), component: ModernChair },
+            { name: t("furniture.chairs.chair8"), component: OfficeChair },
+            { name: t("furniture.chairs.chair9"), component: RockingChair },
+            { name: t("furniture.chairs.chair10"), component: SimpleChair },
           ],
         },
         {
@@ -193,11 +191,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.desks.name"),
           icon: <LuTable2 size={20} />,
           components: [
-            { name: t("furniture.desks.desk1"), component: <ClassicTable /> },
-            { name: t("furniture.desks.desk2"), component: <ModernTable /> },
-            { name: t("furniture.desks.desk3"), component: <OfficeTable /> },
-            { name: t("furniture.desks.desk4"), component: <CoffeeTable /> },
-            { name: t("furniture.desks.desk5"), component: <FoldingTable /> },
+            { name: t("furniture.desks.desk1"), component: ClassicTable },
+            { name: t("furniture.desks.desk2"), component: ModernTable },
+            { name: t("furniture.desks.desk3"), component: OfficeTable },
+            { name: t("furniture.desks.desk4"), component: CoffeeTable },
+            { name: t("furniture.desks.desk5"), component: FoldingTable },
           ],
         },
         {
@@ -207,23 +205,23 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.wardrobe.wardrobe1"),
-              component: <ClassicWardrobe />,
+              component: ClassicWardrobe
             },
             {
               name: t("furniture.wardrobe.wardrobe2"),
-              component: <ModernWardrobe />,
+              component: ModernWardrobe
             },
             {
               name: t("furniture.wardrobe.wardrobe3"),
-              component: <Bookcase />,
+              component: Bookcase 
             },
             {
               name: t("furniture.wardrobe.wardrobe4"),
-              component: <ShelfWardrobe />,
+              component: ShelfWardrobe
             },
             {
               name: t("furniture.wardrobe.wardrobe5"),
-              component: <ClosetWardrobe />,
+              component: ClosetWardrobe
             },
           ],
         },
@@ -232,9 +230,9 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.shelfs.name"),
           icon: <LuLibrary size={20} />,
           components: [
-            { name: t("furniture.shelfs.shelf1"), component: <ClassicShelf /> },
-            { name: t("furniture.shelfs.shelf2"), component: <ModernShelf /> },
-            { name: t("furniture.shelfs.shelf3"), component: <CornerShelf /> },
+            { name: t("furniture.shelfs.shelf1"), component: ClassicShelf },
+            { name: t("furniture.shelfs.shelf2"), component: ModernShelf },
+            { name: t("furniture.shelfs.shelf3"), component: CornerShelf },
           ],
         },
       ],
@@ -248,9 +246,9 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.pcs.name"),
           icon: <FaDesktop size={20} />,
           components: [
-            { name: t("furniture.pcs.pc1"), component: <DesktopPC /> },
-            { name: t("furniture.pcs.pc2"), component: <Laptop /> },
-            { name: t("furniture.pcs.pc3"), component: <GamingPC /> },
+            { name: t("furniture.pcs.pc1"), component: DesktopPC },
+            { name: t("furniture.pcs.pc2"), component: Laptop },
+            { name: t("furniture.pcs.pc3"), component: GamingPC },
           ],
         },
         // {
@@ -280,11 +278,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.plants.name"),
           icon: <RiPlantLine size={20} />,
           components: [
-            { name: t("furniture.plants.plant1"), component: <CactusPlant /> },
-            { name: t("furniture.plants.plant2"), component: <LeafyPlant /> },
+            { name: t("furniture.plants.plant1"), component: CactusPlant },
+            { name: t("furniture.plants.plant2"), component: LeafyPlant },
             {
               name: t("furniture.plants.plant3"),
-              component: <FloweringPlant />,
+              component: FloweringPlant
             },
           ],
         },
@@ -293,8 +291,8 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.rugs.name"),
           icon: <PiRug size={20} />,
           components: [
-            { name: t("furniture.rugs.rug1"), component: <OrientalRug /> },
-            { name: t("furniture.rugs.rug2"), component: <ModernRug /> },
+            { name: t("furniture.rugs.rug1"), component: OrientalRug },
+            { name: t("furniture.rugs.rug2"), component: ModernRug },
           ],
         },
       ],
@@ -310,13 +308,13 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.beanbags.beanbag1"),
-              component: <RoundPouf />,
+              component: RoundPouf
             },
             {
               name: t("furniture.beanbags.beanbag2"),
-              component: <SquarePouf />,
+              component: SquarePouf
             },
-            { name: t("furniture.beanbags.beanbag3"), component: <StarPouf /> },
+            { name: t("furniture.beanbags.beanbag3"), component: StarPouf },
           ],
         },
         {
@@ -326,11 +324,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.wheels.wheel1"),
-              component: <SportSteeringWheel />,
+              component: SportSteeringWheel
             },
             {
               name: t("furniture.wheels.wheel2"),
-              component: <RacingSteeringWheel />,
+              component: RacingSteeringWheel
             },
           ],
         },
@@ -341,11 +339,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.arcades.arcade1"),
-              component: <ClassicArcade />,
+              component: ClassicArcade
             },
             {
               name: t("furniture.arcades.arcade2"),
-              component: <RacingArcade />,
+              component: RacingArcade
             },
           ],
         },

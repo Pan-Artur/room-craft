@@ -68,13 +68,6 @@ export const ManagementPanel = ({
         {mode === 'move' && "1. Виберіть меблі на сітці\n2. Клікніть на нову клітинку"}
         {mode === 'delete' && "Клікніть на меблі для видалення"}
       </InstructionText>
-      
-      {selectedItem && (
-        <div>
-          <p>Вибрано: {selectedItem.type}</p>
-          <p>Позиція: {selectedItem.x},{selectedItem.y}</p>
-        </div>
-      )}
     </PanelContainer>
   );
 };
