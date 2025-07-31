@@ -5,9 +5,10 @@ export const ClassicWoodChair = () => {
     <ChairContainer>
       <Seat />
       <Back />
-      <Legs>
-        {[...Array(4)].map((_, i) => <Leg key={i} />)}
-      </Legs>
+      <Leg $front $left />
+      <Leg $front $right />
+      <Leg $back $left />
+      <Leg $back $right />
     </ChairContainer>
   );
 };
@@ -20,39 +21,33 @@ const ChairContainer = styled.div`
 
 const Seat = styled.div`
   width: 60%;
-  height: 60%;
+  height: 40%;
   background-color: #8b4513;
-  border-radius: 10%;
   position: absolute;
-  top: 20%;
+  top: 40%;
   left: 20%;
   z-index: 2;
 `;
 
 const Back = styled.div`
-  width: 20%;
+  width: 50%;
   height: 60%;
   background-color: #654321;
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 25%;
   z-index: 1;
 `;
 
-const Legs = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-`;
-
 const Leg = styled.div`
-  width: 10%;
-  height: 10%;
+  width: 8%;
+  height: 40%;
   background-color: #5D4037;
   position: absolute;
+  bottom: 0;
   
-  &:nth-child(1) { bottom: 0; left: 15%; }
-  &:nth-child(2) { bottom: 0; right: 15%; }
-  &:nth-child(3) { top: 70%; left: 15%; }
-  &:nth-child(4) { top: 70%; right: 15%; }
+  ${props => props.$front && props.$left && 'left: 20%;'}
+  ${props => props.$front && props.$right && 'right: 20%;'}
+  ${props => props.$back && props.$left && 'left: 15%; height: 45%;'}
+  ${props => props.$back && props.$right && 'right: 15%; height: 45%;'}
 `;
