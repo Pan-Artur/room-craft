@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const ModernTable = () => {
+export const ModernTable = ({ rotation = 0 }) => {
   return (
-    <ModernTableContainer>
+    <ModernTableContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <GlassTop />
       <MetalBase />
     </ModernTableContainer>
@@ -12,7 +12,9 @@ export const ModernTable = () => {
 const ModernTableContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const GlassTop = styled.div`

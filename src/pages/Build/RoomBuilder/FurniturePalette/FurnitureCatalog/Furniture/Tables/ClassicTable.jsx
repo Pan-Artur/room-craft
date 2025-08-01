@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const ClassicTable = () => {
+export const ClassicTable = ({ rotation = 0 }) => {
   return (
-    <ClassicTableContainer>
+    <ClassicTableContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <TableTop />
       <TableLeg $left $top />
       <TableLeg $right $top />
@@ -15,7 +15,9 @@ export const ClassicTable = () => {
 const ClassicTableContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const TableTop = styled.div`

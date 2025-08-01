@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const OfficeTable = () => {
+export const OfficeTable = ({ rotation = 0 }) => {
   return (
-    <OfficeTableContainer>
+    <OfficeTableContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <TableSurface />
       <DrawerSection />
     </OfficeTableContainer>
@@ -12,7 +12,9 @@ export const OfficeTable = () => {
 const OfficeTableContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const TableSurface = styled.div`

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const CoffeeTable = () => {
+export const CoffeeTable = ({ rotation = 0 }) => {
   return (
-    <CoffeeTableContainer>
+    <CoffeeTableContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <RoundTop />
       <CentralLeg />
     </CoffeeTableContainer>
@@ -12,7 +12,9 @@ export const CoffeeTable = () => {
 const CoffeeTableContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const RoundTop = styled.div`

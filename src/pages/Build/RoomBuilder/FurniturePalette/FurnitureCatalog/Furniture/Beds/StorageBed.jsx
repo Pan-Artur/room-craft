@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export const StorageBed = () => {
+export const StorageBed = ({ rotation = 0 }) => {
+  const isVertical = rotation % 180 !== 0;
+
   return (
-    <BedContainer>
+    <BedContainer $vertical={isVertical} style={{ transform: `rotate(${rotation}deg)` }}>
       <BedFrame>
         <Mattress>
           <Pillow />
@@ -27,10 +29,12 @@ export const StorageBed = () => {
 const BedContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: ${({ $vertical }) => ($vertical ? '2 / 3' : '3 / 2')};
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transition: transform 0.3s ease;
 `;
 
 const BedFrame = styled.div`

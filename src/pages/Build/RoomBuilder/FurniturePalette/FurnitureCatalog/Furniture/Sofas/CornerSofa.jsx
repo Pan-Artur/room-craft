@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const CornerSofa = () => {
+export const CornerSofa = ({ rotation = 0 }) => {
   return (
-    <CornerSofaContainer>
+    <CornerSofaContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <CornerBase />
       <CornerExtension />
     </CornerSofaContainer>
@@ -12,7 +12,9 @@ export const CornerSofa = () => {
 const CornerSofaContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const CornerBase = styled.div`

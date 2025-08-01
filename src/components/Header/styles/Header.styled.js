@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
@@ -30,7 +31,7 @@ export const HeaderFlex = styled.div`
   }
 `;
 
-export const Logo = styled.a`
+export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

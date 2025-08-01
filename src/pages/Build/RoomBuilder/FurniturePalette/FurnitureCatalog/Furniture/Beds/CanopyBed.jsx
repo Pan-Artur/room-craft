@@ -20,16 +20,16 @@ export const CanopyBed = ({ rotation = 0 }) => {
 };
 
 const BedContainer = styled.div`
-  width: ${({ $vertical }) => ($vertical ? '100%' : '100%')};
-  height: ${({ $vertical }) => ($vertical ? '100%' : '100%')};
-  aspect-ratio: ${({ $vertical }) => ($vertical ? '2 / 3' : '3 / 2')};
+  width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transform: ${({ $rotation }) => `rotate(${$rotation}deg)`};
+  transform-origin: center;
   transition: transform 0.3s ease;
 `;
-
 
 const Pillar = styled.div`
   width: 6%;

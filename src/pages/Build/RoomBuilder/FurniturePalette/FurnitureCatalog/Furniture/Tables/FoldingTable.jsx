@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const FoldingTable = () => {
+export const FoldingTable = ({ rotation = 0 }) => {
   return (
-    <FoldingTableContainer>
+    <FoldingTableContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <MainPanel />
       <ExtensionPanel />
       <SupportLeg />
@@ -13,7 +13,9 @@ export const FoldingTable = () => {
 const FoldingTableContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const MainPanel = styled.div`
