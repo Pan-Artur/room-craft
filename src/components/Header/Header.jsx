@@ -4,7 +4,7 @@ import {
   HeaderContainer,
   HeaderWrapper,
   HeaderFlex,
-  Logo,
+  LogoLink,
   Nav,
   BurgerBtn,
   BurgerMenu,
@@ -16,7 +16,6 @@ import { IoClose as CrossIcon } from "react-icons/io5";
 import { GiHamburgerMenu as BurgerIcon } from "react-icons/gi";
 import { useTranslation } from "react-i18next";
 import logoImage from "../../assets/images/logo.webp";
-
 import { LanguageToggler } from "../LanguageToggler/LanguageToggler";
 
 export const Header = () => {
@@ -33,12 +32,10 @@ export const Header = () => {
       <Container>
         <HeaderWrapper>
           <HeaderFlex>
-            <Logo>
+            <LogoLink to="/">
               <img src={logoImage} alt="Logo" />
-              <Link to="/">
-                <span>RoomCraft</span>
-              </Link>
-            </Logo>
+              <span>RoomCraft</span>
+            </LogoLink>
   
             <Nav>
               <Link to="/">{t("header.page1")}</Link>

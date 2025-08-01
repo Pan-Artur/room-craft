@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export const FoldingSofa = () => {
+export const FoldingSofa = ({ rotation = 0 }) => {
+  const isVertical = rotation % 180 !== 0;
+
   return (
-    <FoldingSofaContainer>
+    <FoldingSofaContainer $vertical={isVertical} style={{ transform: `rotate(${rotation}deg)` }}>
       <FoldingBase />
       <FoldingBack />
       <FoldingSeam />
@@ -13,7 +15,9 @@ export const FoldingSofa = () => {
 const FoldingSofaContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: ${({ $vertical }) => ($vertical ? '1 / 2' : '2 / 1')};
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const FoldingBase = styled.div`

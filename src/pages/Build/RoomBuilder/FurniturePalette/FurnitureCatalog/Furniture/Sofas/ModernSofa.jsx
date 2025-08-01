@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export const ModernSofa = () => {
+export const ModernSofa = ({ rotation = 0 }) => {
+  const isVertical = rotation % 180 !== 0;
+
   return (
-    <ModernSofaContainer>
+    <ModernSofaContainer $vertical={isVertical} style={{ transform: `rotate(${rotation}deg)` }}>
       <ModernSofaBase />
       <ModernSofaBack />
     </ModernSofaContainer>
@@ -12,7 +14,9 @@ export const ModernSofa = () => {
 const ModernSofaContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: ${({ $vertical }) => ($vertical ? '1 / 2' : '2 / 1')};
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const ModernSofaBase = styled.div`

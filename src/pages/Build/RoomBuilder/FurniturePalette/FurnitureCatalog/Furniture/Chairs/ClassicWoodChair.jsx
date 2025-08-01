@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const ClassicWoodChair = () => {
+export const ClassicWoodChair = ({ rotation = 0 }) => {
   return (
-    <ChairContainer>
+    <ChairContainer style={{ transform: `rotate(${rotation}deg)` }}>
       <Seat />
       <Back />
       <Leg $front $left />
@@ -16,7 +16,9 @@ export const ClassicWoodChair = () => {
 const ChairContainer = styled.div`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
+  transition: transform 0.3s ease;
 `;
 
 const Seat = styled.div`

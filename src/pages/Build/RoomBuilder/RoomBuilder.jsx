@@ -16,6 +16,39 @@ const getFurnitureSize = (type, rotation = 0) => {
     case "sofa":
       size = { cols: 2, rows: 1 };
       break;
+    case "chair":
+      size = { cols: 1, rows: 1 };
+      break;
+    case "desk":
+      size = { cols: 2, rows: 1 };
+      break;
+    case "wardrobe":
+      size = { cols: 2, rows: 3 };
+      break;
+    case "shelf":
+      size = { cols: 1, rows: 2 };
+      break;
+    case "pc":
+      size = { cols: 1, rows: 1 };
+      break;
+    case "plant":
+      size = { cols: 1, rows: 1 };
+      break;
+    case "rug":
+      size = { cols: 3, rows: 2 };
+      break;
+    case "beanbag":
+      size = { cols: 1, rows: 1 };
+      break;
+    case "wheel":
+      size = { cols: 1, rows: 1 };
+      break;
+    case "arcade":
+      size = { cols: 1, rows: 1 };
+      break;
+    default:
+      size = { cols: 1, rows: 1 };
+      break;
   }
 
   if (rotation % 180 !== 0) {
@@ -38,39 +71,45 @@ export const RoomBuilder = () => {
     }
   };
 
-  const canPlaceFurniture = useCallback((x, y, type, rotation = 0) => {
-      const size = getFurnitureSize(type, rotation);
-      const cols =
-        size.gridColumn === "span 3" ? 3 : size.gridColumn === "span 2" ? 2 : 1;
-      const rows = size.gridRow === "span 2" ? 2 : 1;
+  const canPlaceFurniture = (x, y, type, furnitureList = [], rotation = 0) => {
+    const { cols, rows } = getFurnitureSize(type, rotation);
 
-      if (x + cols > 6 || y + rows > 6) return false;
+    if (x + cols > 10 || y + rows > 10) return false;
 
-      return !furniture.some((item) => {
-        const itemSize = getFurnitureSize(item.type);
-        const itemCols =
-          itemSize.gridColumn === "span 3"
-            ? 3
-            : itemSize.gridColumn === "span 2"
-            ? 2
-            : 1;
-        const itemRows = itemSize.gridRow === "span 2" ? 2 : 1;
+    for (let furniture of furnitureList) {
+      const { cols: fCols, rows: fRows } = getFurnitureSize(
+        furniture.type,
+        furniture.rotation || 0
+      );
 
-        return (
-          x < item.x + itemCols &&
-          x + cols > item.x &&
-          y < item.y + itemRows &&
-          y + rows > item.y
-        );
-      });
-    },
-    [furniture]
-  );
+      const x2 = furniture.x;
+      const y2 = furniture.y;
+
+      if (x < x2 + fCols && x + cols > x2 && y < y2 + fRows && y + rows > y2) {
+        return false;
+      }
+    }
+
+    return true;
+  };
 
   const handleCellClick = useCallback(
     (x, y) => {
       if (mode === "move" && selectedItem) {
-        if (canPlaceFurniture(x, y, selectedItem.type, selectedItem.rotation)) {
+        const size = getFurnitureSize(selectedItem.type, selectedItem.rotation);
+        if (x + size.cols > 6 || y + size.rows > 6) {
+          return;
+        }
+
+        if (
+          canPlaceFurniture(
+            x,
+            y,
+            selectedItem.type,
+            furniture.filter((item) => item.id !== selectedItem.id),
+            selectedItem.rotation
+          )
+        ) {
           setFurniture(
             furniture.map((item) =>
               item.id === selectedItem.id ? { ...item, x, y } : item
@@ -79,7 +118,12 @@ export const RoomBuilder = () => {
           setSelectedItem(null);
         }
       } else if (mode === "add" && selectedPaletteItem) {
-        if (canPlaceFurniture(x, y, selectedPaletteItem.type, 0)) {
+        const size = getFurnitureSize(selectedPaletteItem.id, 0);
+        if (x + size.cols > 6 || y + size.rows > 6) {
+          return;
+        }
+
+        if (canPlaceFurniture(x, y, selectedPaletteItem.id, furniture, 0)) {
           const newFurniture = {
             id: Date.now(),
             type: selectedPaletteItem.id,
@@ -87,6 +131,7 @@ export const RoomBuilder = () => {
             y,
             component: selectedPaletteItem.component,
             rotation: 0,
+            name: selectedPaletteItem.name,
           };
           setFurniture([...furniture, newFurniture]);
         }
@@ -102,12 +147,20 @@ export const RoomBuilder = () => {
     }
   };
 
-  const handleRotateFurniture = (id, degrees) => {
-    setFurniture(
-      furniture.map((item) => {
+  const handleRotateFurniture = (id, angle) => {
+    setFurniture((prevFurniture) =>
+      prevFurniture.map((item) => {
         if (item.id === id) {
-          const newRotation = (item.rotation + degrees) % 360;
-          return { ...item, rotation: newRotation };
+          const newRotation = (item.rotation + angle) % 360;
+          const canRotate = canPlaceFurniture(
+            item.x,
+            item.y,
+            item.type,
+            prevFurniture.filter((f) => f.id !== id),
+            newRotation
+          );
+
+          return canRotate ? { ...item, rotation: newRotation } : item;
         }
         return item;
       })

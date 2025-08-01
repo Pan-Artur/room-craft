@@ -1,25 +1,38 @@
 import styled from 'styled-components';
 
-export const TransformerBed = () => {
+export const TransformerBed = ({ rotation = 0 }) => {
   return (
-    <BedContainer>
-      <Base>
-        <Mattress />
-        <FoldIndicators>
-          <FoldIndicator />
-          <FoldIndicator />
-        </FoldIndicators>
-      </Base>
-      <FoldPart>
-        <Hinge $left />
-        <Hinge $right />
-      </FoldPart>
-      <ControlPanel />
-    </BedContainer>
+    <BedWrapper rotation={rotation}>
+      <BedInner>
+        <Base>
+          <Mattress />
+          <FoldIndicators>
+            <FoldIndicator />
+            <FoldIndicator />
+          </FoldIndicators>
+        </Base>
+        <FoldPart>
+          <Hinge $left />
+          <Hinge $right />
+        </FoldPart>
+        <ControlPanel />
+      </BedInner>
+    </BedWrapper>
   );
 };
 
-const BedContainer = styled.div`
+const BedWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  transform: rotate(${({ rotation }) => rotation}deg);
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BedInner = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
@@ -119,7 +132,7 @@ const ControlPanel = styled.div`
   align-items: center;
 
   &::before {
-    content: '▲▼';
+    content: '';
     color: #ECEFF1;
     font-size: 12px;
   }

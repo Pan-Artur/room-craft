@@ -6,7 +6,7 @@ export const PaletteContainer = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   overflow-y: auto;
-  padding: 1rem;
+  padding: 15px;
   height: 100%;
 `;
 
@@ -59,6 +59,12 @@ export const CategoryHeader = styled.div`
   &:hover {
     background: #F0F0F0;
   }
+`;
+
+export const CategoryTitle = styled.div`
+  font-weight: bold;
+  margin-top: 12px;
+  cursor: pointer;
 `;
 
 export const CategoryIcon = styled.div`
@@ -124,4 +130,42 @@ export const SubcategoryName = styled.span`
   flex-grow: 1;
   margin-left: 8px;
   font-size: 14px;
+`;
+
+
+export const VariantWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 16px 12px 36px;
+`;
+
+export const VariantBox = styled.div`
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    border-color: #4DB6AC;
+    box-shadow: 0 0 0 2px rgba(77, 182, 172, 0.2);
+  }
+
+  & > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: ${props => `rotate(${props.$rotation || 0}deg)`};
+    transform-origin: center;
+  }
 `;

@@ -107,6 +107,8 @@ import {
   SubcategoryContent,
   SubcategoryHeader,
   SubcategoryName,
+  VariantBox,
+  VariantWrapper,
 } from "./styles/FurniturePalette.styled";
 
 import {
@@ -131,11 +133,16 @@ import { SiApplearcade } from "react-icons/si";
 
 import { useTranslation } from "react-i18next";
 
-export const FurniturePalette = ({ onSelectItem }) => {
+export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
+  const [activeModel, setActiveModel] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const { t } = useTranslation();
+
+  const [expandedCategory, setExpandedCategory] = useState(null);
+  const [expandedSubcategory, setExpandedSubcategory] = useState(null);
+  const [expandedFurniture, setExpandedFurniture] = useState(null);
 
   const categories = {
     furniture: {
@@ -147,11 +154,56 @@ export const FurniturePalette = ({ onSelectItem }) => {
           name: t("furniture.beds.name"),
           icon: <GiBed size={20} />,
           components: [
-            { name: t("furniture.beds.bed1"), component: CanopyBed },
-            { name: t("furniture.beds.bed2"), component: FoldingBed },
-            { name: t("furniture.beds.bed4"), component: MetalBed },
-            { name: t("furniture.beds.bed5"), component: StorageBed },
-            { name: t("furniture.beds.bed6"), component: TransformerBed },
+            {
+              name: t("furniture.beds.bed1"),
+              component: CanopyBed,
+              positions: [
+                { x: 0, y: 0, rotation: 0 },
+                { x: 0, y: 0, rotation: 90 },
+                { x: 0, y: 0, rotation: 180 },
+                { x: 0, y: 0, rotation: 270 },
+              ],
+            },
+            {
+              name: t("furniture.beds.bed2"),
+              component: FoldingBed,
+              positions: [
+                { x: 0, y: 0, rotation: 0 },
+                { x: 0, y: 0, rotation: 90 },
+                { x: 0, y: 0, rotation: 180 },
+                { x: 0, y: 0, rotation: 270 },
+              ],
+            },
+            {
+              name: t("furniture.beds.bed4"),
+              component: MetalBed,
+              positions: [
+                { x: 0, y: 0, rotation: 0 },
+                { x: 0, y: 0, rotation: 90 },
+                { x: 0, y: 0, rotation: 180 },
+                { x: 0, y: 0, rotation: 270 },
+              ],
+            },
+            {
+              name: t("furniture.beds.bed5"),
+              component: StorageBed,
+              positions: [
+                { x: 0, y: 0, rotation: 0 },
+                { x: 0, y: 0, rotation: 90 },
+                { x: 0, y: 0, rotation: 180 },
+                { x: 0, y: 0, rotation: 270 },
+              ],
+            },
+            {
+              name: t("furniture.beds.bed6"),
+              component: TransformerBed,
+              positions: [
+                { x: 0, y: 0, rotation: 0 },
+                { x: 0, y: 0, rotation: 90 },
+                { x: 0, y: 0, rotation: 180 },
+                { x: 0, y: 0, rotation: 270 },
+              ],
+            },
           ],
         },
         {
@@ -205,23 +257,23 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.wardrobe.wardrobe1"),
-              component: ClassicWardrobe
+              component: ClassicWardrobe,
             },
             {
               name: t("furniture.wardrobe.wardrobe2"),
-              component: ModernWardrobe
+              component: ModernWardrobe,
             },
             {
               name: t("furniture.wardrobe.wardrobe3"),
-              component: Bookcase 
+              component: Bookcase,
             },
             {
               name: t("furniture.wardrobe.wardrobe4"),
-              component: ShelfWardrobe
+              component: ShelfWardrobe,
             },
             {
               name: t("furniture.wardrobe.wardrobe5"),
-              component: ClosetWardrobe
+              component: ClosetWardrobe,
             },
           ],
         },
@@ -282,7 +334,7 @@ export const FurniturePalette = ({ onSelectItem }) => {
             { name: t("furniture.plants.plant2"), component: LeafyPlant },
             {
               name: t("furniture.plants.plant3"),
-              component: FloweringPlant
+              component: FloweringPlant,
             },
           ],
         },
@@ -308,11 +360,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.beanbags.beanbag1"),
-              component: RoundPouf
+              component: RoundPouf,
             },
             {
               name: t("furniture.beanbags.beanbag2"),
-              component: SquarePouf
+              component: SquarePouf,
             },
             { name: t("furniture.beanbags.beanbag3"), component: StarPouf },
           ],
@@ -324,11 +376,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.wheels.wheel1"),
-              component: SportSteeringWheel
+              component: SportSteeringWheel,
             },
             {
               name: t("furniture.wheels.wheel2"),
-              component: RacingSteeringWheel
+              component: RacingSteeringWheel,
             },
           ],
         },
@@ -339,11 +391,11 @@ export const FurniturePalette = ({ onSelectItem }) => {
           components: [
             {
               name: t("furniture.arcades.arcade1"),
-              component: ClassicArcade
+              component: ClassicArcade,
             },
             {
               name: t("furniture.arcades.arcade2"),
-              component: RacingArcade
+              component: RacingArcade,
             },
           ],
         },
@@ -376,75 +428,130 @@ export const FurniturePalette = ({ onSelectItem }) => {
     .filter((category) => category.items.length > 0);
 
   return (
-    <Container>
-      <PaletteContainer>
-        <PaletteHeader>{t("catalog.title")}</PaletteHeader>
-
-        <SearchInput
-          placeholder={t("catalog.placeholder")}
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-
-        <CategoryList>
-          {filteredCategories.map((category) => (
-            <CategoryItem key={category.name}>
-              <CategoryHeader
-                onClick={() => toggleCategory(category.name)}
-                $isActive={activeCategory === category.name}
-              >
-                <CategoryIcon>{category.icon}</CategoryIcon>
-                <CategoryName>{category.name}</CategoryName>
-                <CategoryArrow>
-                  {activeCategory === category.name ? (
-                    <FaChevronUp />
-                  ) : (
-                    <FaChevronDown />
-                  )}
-                </CategoryArrow>
-              </CategoryHeader>
-
-              <CategoryContent $isOpen={activeCategory === category.name}>
-                {category.items.map((item) => (
-                  <div key={item.id}>
-                    <SubcategoryHeader
-                      onClick={() => toggleSubcategory(item.id)}
-                      $isActive={activeSubcategory === item.id}
-                    >
-                      <FurnitureIcon>{item.icon}</FurnitureIcon>
-                      <SubcategoryName>{item.name}</SubcategoryName>
-                      <CategoryArrow>
-                        {activeSubcategory === item.id ? (
-                          <FaChevronUp size={14} />
-                        ) : (
-                          <FaChevronDown size={14} />
-                        )}
-                      </CategoryArrow>
-                    </SubcategoryHeader>
-
-                    <SubcategoryContent $isOpen={activeSubcategory === item.id}>
-                      {item.components.map((component, index) => (
+    <PaletteContainer>
+      <PaletteHeader>Каталог меблів</PaletteHeader>
+      <SearchInput
+        placeholder="Пошук..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <CategoryList>
+        {filteredCategories.map((category) => (
+          <CategoryItem key={category.name}>
+            <CategoryHeader
+              $isActive={expandedCategory === category.name}
+              onClick={() =>
+                setExpandedCategory(
+                  expandedCategory === category.name ? null : category.name
+                )
+              }
+            >
+              <CategoryIcon>{category.icon}</CategoryIcon>
+              <CategoryName>{category.name}</CategoryName>
+              <CategoryArrow>
+                {expandedCategory === category.name ? (
+                  <FaChevronUp />
+                ) : (
+                  <FaChevronDown />
+                )}
+              </CategoryArrow>
+            </CategoryHeader>
+            <CategoryContent $isOpen={expandedCategory === category.name}>
+              {category.items.map((item) => (
+                <div key={item.name}>
+                  <SubcategoryHeader
+                    $isActive={expandedSubcategory === item.name}
+                    onClick={() =>
+                      setExpandedSubcategory(
+                        expandedSubcategory === item.name ? null : item.name
+                      )
+                    }
+                  >
+                    <FurnitureIcon>{item.icon}</FurnitureIcon>
+                    <SubcategoryName>{item.name}</SubcategoryName>
+                    <CategoryArrow>
+                      {expandedSubcategory === item.name ? (
+                        <FaChevronUp size={12} />
+                      ) : (
+                        <FaChevronDown size={12} />
+                      )}
+                    </CategoryArrow>
+                  </SubcategoryHeader>
+                  <SubcategoryContent
+                    $isOpen={expandedSubcategory === item.name}
+                  >
+                    {item.components.map((component) => (
+                      <div key={component.name}>
                         <FurnitureItem
-                          key={`${item.id}-${index}`}
                           onClick={() =>
-                            onSelectItem({
-                              ...item,
-                              component: component.component,
-                              name: component.name,
-                            })
+                            setExpandedFurniture(
+                              expandedFurniture === component.name
+                                ? null
+                                : component.name
+                            )
                           }
                         >
                           <FurnitureName>{component.name}</FurnitureName>
+                          <CategoryArrow>
+                            {expandedFurniture === component.name ? (
+                              <FaChevronUp size={12} />
+                            ) : (
+                              <FaChevronDown size={12} />
+                            )}
+                          </CategoryArrow>
                         </FurnitureItem>
-                      ))}
-                    </SubcategoryContent>
-                  </div>
-                ))}
-              </CategoryContent>
-            </CategoryItem>
-          ))}
-        </CategoryList>
-      </PaletteContainer>
-    </Container>
+                        {expandedFurniture === component.name && (
+                          <VariantWrapper>
+                            {component.positions ? (
+                              component.positions.map((variant, index) => (
+                                <VariantBox
+                                  key={index}
+                                  $rotation={variant.rotation}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    onSelectItem({
+                                      id: item.id,
+                                      name: component.name,
+                                      component: component.component,
+                                      rotation: variant.rotation,
+                                    });
+                                  }}
+                                >
+                                  <div>
+                                    <component.component
+                                      rotation={variant.rotation}
+                                    />
+                                  </div>
+                                </VariantBox>
+                              ))
+                            ) : (
+                              <VariantBox
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onSelectItem({
+                                    id: item.id,
+                                    name: component.name,
+                                    component: component.component,
+                                    rotation: 0,
+                                  });
+                                }}
+                              >
+                                <div>
+                                  <component.component />
+                                </div>
+                              </VariantBox>
+                            )}
+                          </VariantWrapper>
+                        )}
+                      </div>
+                    ))}
+                  </SubcategoryContent>
+                </div>
+              ))}
+            </CategoryContent>
+          </CategoryItem>
+        ))}
+      </CategoryList>
+    </PaletteContainer>
   );
 };

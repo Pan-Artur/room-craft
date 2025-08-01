@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export const FoldingBed = () => {
+export const FoldingBed = ({ rotation = 0 }) => {
+  const isVertical = rotation % 180 !== 0;
+
   return (
-    <BedContainer>
+    <BedContainer $vertical={isVertical} style={{ transform: `rotate(${rotation}deg)` }}>
       <MainPart>
         <Mattress />
         <Pillow />
@@ -18,12 +20,14 @@ export const FoldingBed = () => {
 };
 
 const BedContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: ${({ $vertical }) => ($vertical ? '100%' : '100%')};
+  height: ${({ $vertical }) => ($vertical ? '100%' : '100%')};
+  aspect-ratio: ${({ $vertical }) => ($vertical ? '2 / 3' : '3 / 2')};
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transition: transform 0.3s ease;
 `;
 
 const MainPart = styled.div`
