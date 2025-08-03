@@ -17,34 +17,34 @@ export const NavLinks = styled.nav`
   gap: 32px;
   flex-wrap: wrap;
   justify-content: center;
-`;
 
-export const Anchor = styled.a`
-  color: #4db6ac;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 17px;
-  position: relative;
-  transition: color 0.3s ease;
+  & * {
+    color: #4db6ac;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+    transition: color 0.3s ease;
 
-  &:hover {
-    color: #64b5f6;
-  }
+    &:hover {
+      color: #64b5f6;
+    }
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #64b5f6;
-    transition: width 0.3s ease;
-  }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #64b5f6;
+      transition: width 0.3s ease;
+    }
 
-  &:hover::after {
-    width: 100%;
+    &:hover::after {
+      width: 100%;
+    }
   }
 `;
 
