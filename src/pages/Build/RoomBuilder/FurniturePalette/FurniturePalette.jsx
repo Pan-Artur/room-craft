@@ -429,9 +429,9 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
 
   return (
     <PaletteContainer>
-      <PaletteHeader>Каталог меблів</PaletteHeader>
+      <PaletteHeader>{t("catalog.title")}</PaletteHeader>
       <SearchInput
-        placeholder="Пошук..."
+        placeholder={t("catalog.placeholder")}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
