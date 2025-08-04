@@ -101,6 +101,8 @@
   },
 
   "furniture": {
+    "catalogTitle": "Каталог меблів",
+    "searchPlaceholder": "Пошук меблів...",
     "furnitureName": "Меблі",
     "beds": {
       "name": "Ліжка",

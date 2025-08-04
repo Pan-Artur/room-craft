@@ -65,6 +65,24 @@ export const RoomBuilder = () => {
   const [selectedPaletteItem, setSelectedPaletteItem] = useState(null);
   const [mode, setMode] = useState("add");
 
+  const handleRotateFurniture = (id, newRotation) => {
+    setFurniture((prev) =>
+      prev.map((item) => {
+        if (item.id !== id) return item;
+
+        const rotatedComponent = item.positions?.find(
+          (p) => p.rotation === newRotation
+        )?.component;
+
+        return {
+          ...item,
+          rotation: newRotation,
+          component: rotatedComponent || item.component,
+        };
+      })
+    );
+  };
+
   const handleSelectItem = (item) => {
     if (mode === "add") {
       setSelectedPaletteItem(item);
@@ -147,24 +165,28 @@ export const RoomBuilder = () => {
     }
   };
 
-  const handleRotateFurniture = (id, angle) => {
-    setFurniture((prevFurniture) =>
-      prevFurniture.map((item) => {
-        if (item.id === id) {
-          const newRotation = (item.rotation + angle) % 360;
-          const canRotate = canPlaceFurniture(
-            item.x,
-            item.y,
-            item.type,
-            prevFurniture.filter((f) => f.id !== id),
-            newRotation
-          );
+  const handleAddToRoom = (item) => {
+    if (item) {
+      const id = `${item.name}-${Date.now()}`;
+      const rotatedComponent =
+        item.positions?.find((p) => p.rotation === (item.rotation || 0))
+          ?.component || item.component;
 
-          return canRotate ? { ...item, rotation: newRotation } : item;
-        }
-        return item;
-      })
-    );
+      const newFurniture = {
+        id,
+        type: item.id,
+        name: item.name,
+        component: rotatedComponent,
+        positions: item.positions,
+        rotation: item.rotation || 0,
+        x: 0,
+        y: 0,
+      };
+
+      setFurniture((prev) => [...prev, newFurniture]);
+      setSelectedItem(newFurniture);
+      setMode("move");
+    }
   };
 
   return (
@@ -172,8 +194,10 @@ export const RoomBuilder = () => {
       <BuilderContainer>
         <FurniturePalette
           onSelectItem={handleSelectItem}
+          onAddToRoom={handleAddToRoom}
           selectedItem={selectedItem}
           mode={mode}
+          onRotateFurniture={handleRotateFurniture}
         />
 
         <RoomGrid

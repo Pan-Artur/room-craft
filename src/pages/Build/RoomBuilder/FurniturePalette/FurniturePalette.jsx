@@ -5,17 +5,71 @@ import { Container } from "../../../../components/Container/Container";
 //Furniture
 
 //Beds
-import { CanopyBed } from "./FurnitureCatalog/Furniture/Beds/CanopyBed";
-import { FoldingBed } from "./FurnitureCatalog/Furniture/Beds/FoldingBed";
-import { MetalBed } from "./FurnitureCatalog/Furniture/Beds/MetalBed";
-import { StorageBed } from "./FurnitureCatalog/Furniture/Beds/StorageBed";
-import { TransformerBed } from "./FurnitureCatalog/Furniture/Beds/TransformerBed";
+import {
+  CanopyBed,
+  CanopyBedHorizontal,
+  CanopyBedVertical,
+  CanopyBedHorizontal180,
+  CanopyBedVertical270,
+} from "./FurnitureCatalog/Furniture/Beds/CanopyBed";
+import {
+  FoldingBed,
+  FoldingBedHorizontal,
+  FoldingBedVertical,
+  FoldingBedHorizontal180,
+  FoldingBedVertical270,
+} from "./FurnitureCatalog/Furniture/Beds/FoldingBed";
+import {
+  MetalBed,
+  MetalBedHorizontal,
+  MetalBedVertical,
+  MetalBedHorizontal180,
+  MetalBedVertical270,
+} from "./FurnitureCatalog/Furniture/Beds/MetalBed";
+import {
+  StorageBed,
+  StorageBedHorizontal,
+  StorageBedVertical,
+  StorageBedHorizontal180,
+  StorageBedVertical270,
+} from "./FurnitureCatalog/Furniture/Beds/StorageBed";
+import {
+  TransformerBed,
+  TransformerBedHorizontal,
+  TransformerBedVertical,
+  TransformerBedHorizontal180,
+  TransformerBedVertical270,
+} from "./FurnitureCatalog/Furniture/Beds/TransformerBed";
 
 //Chairs
-import { ClassicWoodChair } from "./FurnitureCatalog/Furniture/Chairs/ClassicWoodChair";
-import { CocoonChair } from "./FurnitureCatalog/Furniture/Chairs/CocoonChair";
-import { GamingChair } from "./FurnitureCatalog/Furniture/Chairs/GamingChair";
-import { GardenChair } from "./FurnitureCatalog/Furniture/Chairs/GardenChair";
+import {
+  ClassicWoodChair,
+  ClassicWoodChairHorizontal,
+  ClassicWoodChairVertical,
+  ClassicWoodChairHorizontal180,
+  ClassicWoodChairVertical270,
+} from "./FurnitureCatalog/Furniture/Chairs/ClassicWoodChair";
+import {
+  CocoonChair,
+  CocoonChairHorizontal,
+  CocoonChairVertical,
+  CocoonChairHorizontal180,
+  CocoonChairVertical270,
+} from "./FurnitureCatalog/Furniture/Chairs/CocoonChair";
+import {
+  GamingChair,
+  GamingChairHorizontal,
+  GamingChairVertical,
+  GamingChairHorizontal180,
+  GamingChairVertical270,
+} from "./FurnitureCatalog/Furniture/Chairs/GamingChair";
+import {
+  GardenChair,
+  GardenChairHorizontal,
+  GardenChairVertical,
+  GardenChairHorizontal180,
+  GardenChairVertical270,
+} from "./FurnitureCatalog/Furniture/Chairs/GardenChair";
 import { HangingChair } from "./FurnitureCatalog/Furniture/Chairs/HangingChair";
 import { MeshChair } from "./FurnitureCatalog/Furniture/Chairs/MeshChair";
 import { ModernChair } from "./FurnitureCatalog/Furniture/Chairs/ModernChair";
@@ -25,11 +79,10 @@ import { SimpleChair } from "./FurnitureCatalog/Furniture/Chairs/SimpleChair";
 
 //Shelves
 import { ClassicShelf } from "./FurnitureCatalog/Furniture/Shelves/ClassicShelf";
-import { CornerShelf } from "./FurnitureCatalog/Furniture/Shelves/CornerShelf";
 import { ModernShelf } from "./FurnitureCatalog/Furniture/Shelves/ModernShelf";
 
 //Sofas
-import { ClassicSofa } from "./FurnitureCatalog/Furniture/Sofas/ClassicSofa";
+import { ClassicSofa, ClassicSofaHorizontal, ClassicSofaVertical, ClassicSofaHorizontal180, ClassicSofaVertical270 } from "./FurnitureCatalog/Furniture/Sofas/ClassicSofa";
 import { CornerSofa } from "./FurnitureCatalog/Furniture/Sofas/CornerSofa";
 import { FoldingSofa } from "./FurnitureCatalog/Furniture/Sofas/FoldingSofa";
 import { ModernSofa } from "./FurnitureCatalog/Furniture/Sofas/ModernSofa";
@@ -101,14 +154,17 @@ import {
   CategoryName,
   CategoryArrow,
   CategoryContent,
-  FurnitureItem,
-  FurnitureIcon,
-  FurnitureName,
   SubcategoryContent,
   SubcategoryHeader,
   SubcategoryName,
-  VariantBox,
+  FurnitureIcon,
+  FurnitureName,
+  FurnitureItem,
+  VariantLabel,
+  VariantOption,
+  VariantOptions,
   VariantWrapper,
+  DefaultVariantBox,
 } from "./styles/FurniturePalette.styled";
 
 import {
@@ -133,7 +189,9 @@ import { SiApplearcade } from "react-icons/si";
 
 import { useTranslation } from "react-i18next";
 
-export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
+export const FurniturePalette = ({
+  onAddToRoom,
+}) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [activeModel, setActiveModel] = useState(null);
@@ -158,50 +216,50 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
               name: t("furniture.beds.bed1"),
               component: CanopyBed,
               positions: [
-                { x: 0, y: 0, rotation: 0 },
-                { x: 0, y: 0, rotation: 90 },
-                { x: 0, y: 0, rotation: 180 },
-                { x: 0, y: 0, rotation: 270 },
+                { rotation: 0, component: CanopyBedHorizontal },
+                { rotation: 90, component: CanopyBedVertical },
+                { rotation: 180, component: CanopyBedHorizontal180 },
+                { rotation: 270, component: CanopyBedVertical270 },
               ],
             },
             {
               name: t("furniture.beds.bed2"),
               component: FoldingBed,
               positions: [
-                { x: 0, y: 0, rotation: 0 },
-                { x: 0, y: 0, rotation: 90 },
-                { x: 0, y: 0, rotation: 180 },
-                { x: 0, y: 0, rotation: 270 },
+                { rotation: 0, component: FoldingBedHorizontal },
+                { rotation: 90, component: FoldingBedVertical },
+                { rotation: 180, component: FoldingBedHorizontal180 },
+                { rotation: 270, component: FoldingBedVertical270 },
               ],
             },
             {
               name: t("furniture.beds.bed4"),
               component: MetalBed,
               positions: [
-                { x: 0, y: 0, rotation: 0 },
-                { x: 0, y: 0, rotation: 90 },
-                { x: 0, y: 0, rotation: 180 },
-                { x: 0, y: 0, rotation: 270 },
+                { rotation: 0, component: MetalBedHorizontal },
+                { rotation: 90, component: MetalBedVertical },
+                { rotation: 180, component: MetalBedHorizontal180 },
+                { rotation: 270, component: MetalBedVertical270 },
               ],
             },
             {
               name: t("furniture.beds.bed5"),
               component: StorageBed,
               positions: [
-                { x: 0, y: 0, rotation: 0 },
-                { x: 0, y: 0, rotation: 90 },
-                { x: 0, y: 0, rotation: 180 },
-                { x: 0, y: 0, rotation: 270 },
+                { rotation: 0, component: StorageBedHorizontal },
+                { rotation: 90, component: StorageBedVertical },
+                { rotation: 180, component: StorageBedHorizontal180 },
+                { rotation: 270, component: StorageBedVertical270 },
               ],
             },
             {
               name: t("furniture.beds.bed6"),
               component: TransformerBed,
               positions: [
-                { x: 0, y: 0, rotation: 0 },
-                { x: 0, y: 0, rotation: 90 },
-                { x: 0, y: 0, rotation: 180 },
-                { x: 0, y: 0, rotation: 270 },
+                { rotation: 0, component: TransformerBedHorizontal },
+                { rotation: 90, component: TransformerBedVertical },
+                { rotation: 180, component: TransformerBedHorizontal180 },
+                { rotation: 270, component: TransformerBedVertical270 },
               ],
             },
           ],
@@ -211,7 +269,16 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
           name: t("furniture.sofas.name"),
           icon: <GiSofa size={20} />,
           components: [
-            { name: t("furniture.sofas.sofa1"), component: ClassicSofa },
+            {
+              name: t("furniture.sofas.sofa1"),
+              component: ClassicSofa,
+              positions: [
+                { rotation: 0, component: ClassicSofaHorizontal },
+                { rotation: 90, component: ClassicSofaVertical },
+                { rotation: 180, component: ClassicSofaHorizontal180 },
+                { rotation: 270, component: ClassicSofaVertical270 },
+              ],
+            },
             { name: t("furniture.sofas.sofa2"), component: ModernSofa },
             { name: t("furniture.sofas.sofa3"), component: CornerSofa },
             { name: t("furniture.sofas.sofa4"), component: SofaBed },
@@ -225,11 +292,44 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
           components: [
             {
               name: t("furniture.chairs.chair1"),
-              component: <ClassicWoodChair />,
+              component: ClassicWoodChair,
+              positions: [
+                { rotation: 0, component: ClassicWoodChairHorizontal },
+                { rotation: 90, component: ClassicWoodChairVertical },
+                { rotation: 180, component: ClassicWoodChairHorizontal180 },
+                { rotation: 270, component: ClassicWoodChairVertical270 },
+              ],
             },
-            { name: t("furniture.chairs.chair2"), component: CocoonChair },
-            { name: t("furniture.chairs.chair3"), component: GamingChair },
-            { name: t("furniture.chairs.chair4"), component: GardenChair },
+            {
+              name: t("furniture.chairs.chair2"),
+              component: CocoonChair,
+              positions: [
+                { rotation: 0, component: CocoonChairHorizontal },
+                { rotation: 90, component: CocoonChairVertical },
+                { rotation: 180, component: CocoonChairHorizontal180 },
+                { rotation: 270, component: CocoonChairVertical270 },
+              ],
+            },
+            {
+              name: t("furniture.chairs.chair3"),
+              component: GamingChair,
+              positions: [
+                { rotation: 0, component: GamingChairHorizontal },
+                { rotation: 90, component: GamingChairVertical },
+                { rotation: 180, component: GamingChairHorizontal180 },
+                { rotation: 270, component: GamingChairVertical270 },
+              ],
+            },
+            {
+              name: t("furniture.chairs.chair4"),
+              component: GardenChair,
+              positions: [
+                { rotation: 0, component: GardenChairHorizontal },
+                { rotation: 90, component: GardenChairVertical },
+                { rotation: 180, component: GardenChairHorizontal180 },
+                { rotation: 270, component: GardenChairVertical270 },
+              ],
+            },
             { name: t("furniture.chairs.chair5"), component: HangingChair },
             { name: t("furniture.chairs.chair6"), component: MeshChair },
             { name: t("furniture.chairs.chair7"), component: ModernChair },
@@ -284,7 +384,6 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
           components: [
             { name: t("furniture.shelfs.shelf1"), component: ClassicShelf },
             { name: t("furniture.shelfs.shelf2"), component: ModernShelf },
-            { name: t("furniture.shelfs.shelf3"), component: CornerShelf },
           ],
         },
       ],
@@ -403,17 +502,6 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
     },
   };
 
-  const toggleCategory = (category) => {
-    setActiveCategory(activeCategory === category ? null : category);
-    setActiveSubcategory(null);
-  };
-
-  const toggleSubcategory = (subcategoryId) => {
-    setActiveSubcategory(
-      activeSubcategory === subcategoryId ? null : subcategoryId
-    );
-  };
-
   const filteredCategories = Object.values(categories)
     .map((category) => {
       const filteredItems = category.items.filter(
@@ -490,6 +578,7 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
                                 : component.name
                             )
                           }
+                          $isActive={expandedFurniture === component.name}
                         >
                           <FurnitureName>{component.name}</FurnitureName>
                           <CategoryArrow>
@@ -502,45 +591,22 @@ export const FurniturePalette = ({ onSelectItem, selectedItem, mode }) => {
                         </FurnitureItem>
                         {expandedFurniture === component.name && (
                           <VariantWrapper>
-                            {component.positions ? (
-                              component.positions.map((variant, index) => (
-                                <VariantBox
-                                  key={index}
-                                  $rotation={variant.rotation}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    onSelectItem({
-                                      id: item.id,
-                                      name: component.name,
-                                      component: component.component,
-                                      rotation: variant.rotation,
-                                    });
-                                  }}
-                                >
-                                  <div>
-                                    <component.component
-                                      rotation={variant.rotation}
-                                    />
-                                  </div>
-                                </VariantBox>
-                              ))
-                            ) : (
-                              <VariantBox
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  onSelectItem({
-                                    id: item.id,
-                                    name: component.name,
-                                    component: component.component,
-                                    rotation: 0,
-                                  });
-                                }}
-                              >
-                                <div>
-                                  <component.component />
-                                </div>
-                              </VariantBox>
-                            )}
+                            <DefaultVariantBox
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onAddToRoom({
+                                  id: item.id,
+                                  name: component.name,
+                                  component: component.component,
+                                  positions: component.positions,
+                                  rotation: 0,
+                                });
+                              }}
+                            >
+                              <div>
+                                <component.component rotation={0} />
+                              </div>
+                            </DefaultVariantBox>
                           </VariantWrapper>
                         )}
                       </div>

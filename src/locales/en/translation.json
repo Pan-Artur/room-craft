@@ -101,6 +101,8 @@
   },
 
   "furniture": {
+    "catalogTitle": "Furniture Catalog",
+    "searchPlaceholder": "Search furniture...",
     "furnitureName": "Furniture",
     "beds": {
       "name": "Beds",

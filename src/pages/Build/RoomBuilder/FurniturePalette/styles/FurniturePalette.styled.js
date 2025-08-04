@@ -91,22 +91,105 @@ export const CategoryContent = styled.div`
   background: #FFFFFF;
 `;
 
+export const DefaultVariantBox = styled.div`
+  width: 100%;
+  height: 120px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+  overflow: hidden;
+  margin-bottom: 8px;
+  position: relative;
+  padding: 10px;
+
+  &:hover {
+    border-color: #4db6ac;
+    box-shadow: 0 0 0 2px rgba(77, 182, 172, 0.2);
+  }
+
+  & > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const VariantOptions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+`;
+
+export const VariantOption = styled.div`
+  width: calc(50% - 4px);
+  height: 60px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    border-color: #4db6ac;
+    box-shadow: 0 0 0 1px rgba(77, 182, 172, 0.2);
+  }
+
+  & > div {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const VariantLabel = styled.span`
+  font-size: 10px;
+  color: #616161;
+  margin-top: 2px;
+`;
+
+
 export const FurnitureItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.2s;
+  background-color: ${props => props.$isActive ? '#f0f0f0' : 'transparent'};
+  border-radius: 4px;
+  margin: 2px 0;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 export const FurnitureIcon = styled.div`
-  margin-right: 10px;
-  color: #4DB6AC;
+  margin-right: 8px;
+  color: #616161;
+  display: flex;
+  align-items: center;
 `;
 
 export const FurnitureName = styled.span`
+  flex: 1;
   font-size: 14px;
-  color: #616161;
+  color: #424242;
 `;
 
 export const SubcategoryContent = styled.div`
