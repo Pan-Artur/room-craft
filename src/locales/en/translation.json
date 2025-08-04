@@ -216,5 +216,26 @@
       "arcade1": "Classic Arcade Machine",
       "arcade2": "Racing Arcade"
     }
+  },
+
+  "managmentPanel": {
+    "title": "Management",
+
+    "button1": "Add",
+    "button2": "Move",
+    "button3": "Delete",
+
+    "subtitle": "Floor theme:",
+
+    "theme1": "Light",
+    "theme2": "Dark",
+    "theme3": "Wood",
+    "theme4": "Tile",
+
+    "text1-1": "1. Select furniture from the catalog",
+    "text1-2": "2. Click on the grid to place it",
+    "text2-1": "1. Select furniture on the grid",
+    "text2-2": "2. Click on the new cell",
+    "text3": "Click on furniture to delete"
   }
 }

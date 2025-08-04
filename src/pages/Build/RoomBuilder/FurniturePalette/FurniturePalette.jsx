@@ -517,9 +517,9 @@ export const FurniturePalette = ({
 
   return (
     <PaletteContainer>
-      <PaletteHeader>{t("furniture.catalogTitle")}</PaletteHeader>
+      <PaletteHeader>{t("catalog.title")}</PaletteHeader>
       <SearchInput
-        placeholder={t("furniture.searchPlaceholder")}
+        placeholder={t("catalog.placeholder")}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
