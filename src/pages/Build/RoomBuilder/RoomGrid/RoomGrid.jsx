@@ -68,25 +68,14 @@ export const RoomGrid = ({
   };
 
   const getFurnitureSize = (type, rotation = 0) => {
-    let size = { cols: 1, rows: 1 };
+    const baseSizes = {
+      bed: { cols: 3, rows: 2 },
+      sofa: { cols: 2, rows: 1 },
+      default: { cols: 1, rows: 1 },
+    };
 
-    switch (type) {
-      case "bed":
-        size = { cols: 3, rows: 2 };
-        break;
-      case "sofa":
-        size = { cols: 2, rows: 1 };
-        break;
-      default:
-        size = { cols: 1, rows: 1 };
-        break;
-    }
-
-    if (rotation % 180 !== 0) {
-      return { cols: size.rows, rows: size.cols };
-    }
-
-    return size;
+    const size = baseSizes[type] || baseSizes.default;
+    return rotation % 180 === 0 ? size : { cols: size.rows, rows: size.cols };
   };
 
   const isCellFree = (x, y) => {
@@ -131,11 +120,20 @@ export const RoomGrid = ({
 
       {furniture.map((item) => {
         const { cols, rows } = getFurnitureSize(item.type, item.rotation);
-        const Component = item.component;
+
+        let Component;
+        if (item.positions) {
+          const position = item.positions.find(
+            (p) => p.rotation === item.rotation
+          );
+          Component = position ? position.component : item.component;
+        } else {
+          Component = item.component;
+        }
 
         return (
           <div
-            key={item.id}
+            key={`${item.id}-${item.rotation}`}
             style={{
               gridColumn: `${item.x + 1} / span ${cols}`,
               gridRow: `${item.y + 1} / span ${rows}`,
@@ -153,23 +151,10 @@ export const RoomGrid = ({
             onClick={(e) => handleItemClick(e, item)}
             onDoubleClick={(e) => {
               e.stopPropagation();
-              onRotateFurniture(item.id, 90);
+              onRotateFurniture(item.id, (item.rotation + 90) % 360);
             }}
           >
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                transform: `rotate(${item.rotation}deg)`,
-                transformOrigin: "center center",
-                transition: "transform 0.3s ease",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Component rotation={item.rotation} />
-            </div>
+            {Component && <Component />}
           </div>
         );
       })}
