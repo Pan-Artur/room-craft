@@ -1,5 +1,5 @@
 import { useDrop } from "react-dnd";
-import { GridContainer, GridCell } from "./styles/RoomGrid.styled";
+import { GridContainer, GridCell, StyledElement } from "./styles/RoomGrid.styled";
 import { useCallback, useRef } from "react";
 
 export const RoomGrid = ({
@@ -132,30 +132,22 @@ export const RoomGrid = ({
         }
 
         return (
-          <div
-            key={`${item.id}-${item.rotation}`}
-            style={{
-              gridColumn: `${item.x + 1} / span ${cols}`,
-              gridRow: `${item.y + 1} / span ${rows}`,
-              position: "relative",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 2,
-              pointerEvents: "auto",
-              cursor: mode === "delete" ? "not-allowed" : "pointer",
-              outline:
-                selectedItem?.id === item.id ? "2px solid #4DB6AC" : "none",
-              borderRadius: "4px",
-            }}
-            onClick={(e) => handleItemClick(e, item)}
-            onDoubleClick={(e) => {
-              e.stopPropagation();
-              onRotateFurniture(item.id, (item.rotation + 90) % 360);
-            }}
-          >
+          <StyledElement
+  key={`${item.id}-${item.rotation}`}
+  $x={item.x}
+  $y={item.y}
+  $cols={cols}
+  $rows={rows}
+  $mode={mode}
+  $isSelected={selectedItem?.id === item.id}
+  onClick={(e) => handleItemClick(e, item)}
+  onDoubleClick={(e) => {
+    e.stopPropagation();
+    onRotateFurniture(item.id, (item.rotation + 90) % 360);
+  }}
+>
             {Component && <Component />}
-          </div>
+          </StyledElement>
         );
       })}
     </GridContainer>
