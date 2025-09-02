@@ -55,3 +55,18 @@ export const GridCell = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.05);
   }
 `;
+
+
+const StyledElement = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: ${props => props.$mode === "delete" ? "not-allowed" : "pointer"};
+  outline: ${props => props.$isSelected ? "2px solid #4DB6AC" : "none"};
+  border-radius: 4px;
+  grid-column: ${props => `${props.$x + 1} / span ${props.$cols}`};
+  grid-row: ${props => `${props.$y + 1} / span ${props.$rows}`};
+`;
