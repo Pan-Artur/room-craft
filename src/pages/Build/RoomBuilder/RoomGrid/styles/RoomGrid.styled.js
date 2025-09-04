@@ -18,7 +18,7 @@ export const GridContainer = styled.div`
     linear-gradient(90deg, ${props => props.$gridColor} 1px, transparent 1px);
   background-size: calc(100% / 6) calc(100% / 6);
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(195, 170, 170, 0.1);
   
   @media (max-width: 768px) {
     max-width: 400px;
@@ -56,17 +56,40 @@ export const GridCell = styled.div`
   }
 `;
 
-
-const StyledElement = styled.div`
-  position: relative;
+export const StyledElement = styled.div`
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
   pointer-events: auto;
   cursor: ${props => props.$mode === "delete" ? "not-allowed" : "pointer"};
-  outline: ${props => props.$isSelected ? "2px solid #4DB6AC" : "none"};
+  border: ${props => props.$isSelected ? "2px solid #4DB6AC" : "2px solid transparent"};
   border-radius: 4px;
-  grid-column: ${props => `${props.$x + 1} / span ${props.$cols}`};
-  grid-row: ${props => `${props.$y + 1} / span ${props.$rows}`};
+  transition: all 0.2s ease;
+  background: transparent !important;
+  
+  /* Розрахунок позиції та розміру на основі пропсів */
+  left: ${props => `calc(${props.$x} * (100% / 6))`};
+  top: ${props => `calc(${props.$y} * (100% / 6))`};
+  width: ${props => `calc(${props.$cols} * (100% / 6))`};
+  height: ${props => `calc(${props.$rows} * (100% / 6))`};
+  
+  /* Ефект при наведенні */
+  &:hover {
+    border: ${props => props.$mode !== "delete" ? "2px solid #90CAF9" : "none"};
+    background: transparent !important;
+  }
+  
+  /* Ефект для режиму видалення */
+  ${props => props.$mode === "delete" && `
+    filter: grayscale(50%) brightness(1.2);
+    opacity: 0.8;
+    background: transparent !important;
+  `}
+  
+  /* Забезпечуємо, що всі внутрішні елементи також мають прозорий фон */
+  & > * {
+    background: transparent !important;
+  }
 `;

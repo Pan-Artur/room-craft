@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import { Container } from "../../../../components/Container/Container";
 
@@ -191,6 +191,9 @@ import { useTranslation } from "react-i18next";
 
 export const FurniturePalette = ({
   onAddToRoom,
+  furniture,
+  gridSize = 6,
+  getFurnitureSize
 }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
@@ -501,6 +504,55 @@ export const FurniturePalette = ({
       ],
     },
   };
+
+  const canPlaceFurniture = useCallback((x, y, cols, rows, excludeId = null) => {
+    // Перевіряємо межі сітки
+    if (x < 0 || y < 0 || x + cols > gridSize || y + rows > gridSize) {
+      return false;
+    }
+    
+    // Перевіряємо вільні комірки
+    for (let checkY = y; checkY < y + rows; checkY++) {
+      for (let checkX = x; checkX < x + cols; checkX++) {
+        if (!isCellFree(checkX, checkY, excludeId)) {
+          return false;
+        }
+      }
+    }
+    
+    return true;
+  }, [furniture, gridSize]);
+
+  // Функція перевірки вільних комірок
+  const isCellFree = useCallback((x, y, excludeId = null) => {
+    return !furniture.some((item) => {
+      if (excludeId && item.id === excludeId) return false;
+      
+      const size = getFurnitureSize(item.type, item.rotation || 0);
+
+      return (
+        x >= item.x &&
+        x < item.x + size.cols &&
+        y >= item.y &&
+        y < item.y + size.rows
+      );
+    });
+  }, [furniture]);
+
+  // Оновлений обробник додавання меблів
+  const handleAddToRoom = useCallback((furnitureData, x, y) => {
+    const size = getFurnitureSize(furnitureData.type, furnitureData.rotation);
+    
+    if (canPlaceFurniture(x, y, size.cols, size.rows)) {
+      onAddToRoom({
+        ...furnitureData,
+        x,
+        y,
+      });
+      return true;
+    }
+    return false;
+  }, [onAddToRoom, canPlaceFurniture]);
 
   const filteredCategories = Object.values(categories)
     .map((category) => {

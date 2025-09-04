@@ -89,19 +89,19 @@ export const RoomBuilder = () => {
     }
   };
 
-  const canPlaceFurniture = (x, y, type, furnitureList = [], rotation = 0) => {
+  const canPlaceFurniture = useCallback((x, y, type, furnitureList = [], rotation = 0) => {
     const { cols, rows } = getFurnitureSize(type, rotation);
 
-    if (x + cols > 10 || y + rows > 10) return false;
+    if (x + cols > 6 || y + rows > 6) return false;
 
-    for (let furniture of furnitureList) {
+    for (let furnitureItem of furnitureList) {
       const { cols: fCols, rows: fRows } = getFurnitureSize(
-        furniture.type,
-        furniture.rotation || 0
+        furnitureItem.type,
+        furnitureItem.rotation || 0
       );
 
-      const x2 = furniture.x;
-      const y2 = furniture.y;
+      const x2 = furnitureItem.x;
+      const y2 = furnitureItem.y;
 
       if (x < x2 + fCols && x + cols > x2 && y < y2 + fRows && y + rows > y2) {
         return false;
@@ -109,7 +109,7 @@ export const RoomBuilder = () => {
     }
 
     return true;
-  };
+  }, []);
 
   const handleCellClick = useCallback(
     (x, y) => {
@@ -193,11 +193,9 @@ export const RoomBuilder = () => {
     <DndProvider backend={HTML5Backend}>
       <BuilderContainer>
         <FurniturePalette
-          onSelectItem={handleSelectItem}
           onAddToRoom={handleAddToRoom}
-          selectedItem={selectedItem}
-          mode={mode}
-          onRotateFurniture={handleRotateFurniture}
+          furniture={furniture}
+          gridSize={6}
         />
 
         <RoomGrid
