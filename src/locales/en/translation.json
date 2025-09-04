@@ -6,7 +6,7 @@
     "language": "Language"
   },
 
-  "hero": {
+  "main-hero": {
     "title": "Create the Room of Your Dreams",
     "subtitle": "An intuitive planner for designing the perfect space. No limits, no stress — just creativity and idea realization.",
 
@@ -18,6 +18,11 @@
     "text2": "Interior styles",
 
     "button": "Start designing — it's free"
+  },
+
+  "build-hero": {
+    "title": "Deploy. Test. Implement ideas.",
+    "subtitle": "Drag and drop furniture, experiment with style, and create a room that reflects you."
   },
 
   "features": {
