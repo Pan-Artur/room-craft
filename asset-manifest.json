@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/room-craft/static/css/main.58462fbc.css",
-    "main.js": "/room-craft/static/js/main.f7929023.js",
+    "main.js": "/room-craft/static/js/main.1e68f08a.js",
     "static/media/hero.webp": "/room-craft/static/media/hero.3221433fb06e494c0c58.webp",
     "static/media/scandinavian.webp": "/room-craft/static/media/scandinavian.8cbb213e32687cbbc7ef.webp",
     "static/media/bg.webp": "/room-craft/static/media/bg.efe49a362d86afcd4f68.webp",
@@ -10,10 +10,10 @@
     "static/media/logo.webp": "/room-craft/static/media/logo.7fa9d52d19d93eeac082.webp",
     "index.html": "/room-craft/index.html",
     "main.58462fbc.css.map": "/room-craft/static/css/main.58462fbc.css.map",
-    "main.f7929023.js.map": "/room-craft/static/js/main.f7929023.js.map"
+    "main.1e68f08a.js.map": "/room-craft/static/js/main.1e68f08a.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.f7929023.js"
+    "static/js/main.1e68f08a.js"
   ]
 }
